@@ -33,9 +33,32 @@
       display: block;
     }
 
+    .nav-container {
+      max-width: 900px;
+      margin: 1rem auto 0 auto;
+      padding: 0 1rem;
+    }
+
+    .btn-back {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-1px);
+    }
+
     main {
       max-width: 900px;
-      margin: 2rem auto;
+      margin: 1.5rem auto 2rem auto;
       padding: 0 1rem;
     }
 
@@ -93,6 +116,11 @@
     <h1>Dad Jokes Central</h1>
     <p>Guaranteed to make you groan and laugh!</p>
   </header>
+
+  <!-- Navigation Back Button -->
+  <div class="nav-container">
+    <a href="https://giggle-factory.com/index.html" class="btn-back">&larr; Back to Main Menu</a>
+  </div>
 
   <main>
     <h2>Choose a Category</h2>
