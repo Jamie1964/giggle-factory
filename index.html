@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- G-F.com/index.html -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,7 @@
     .banner-logo {
       width: 100%;
       max-height: 250px;
-      object-fit: cover; /* Ensures the banner fills nicely without stretching awkwardly */
+      object-fit: cover;
       display: block;
     }
 
@@ -87,7 +87,7 @@
 
   <header>
     <!-- Full Width Banner Logo -->
-    <a href="index.html" class="banner-container">
+    <a href="/index.html" class="banner-container">
       <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
     </a>
     <h1>Welcome to Giggle Factory</h1>
@@ -98,19 +98,18 @@
     <h2>Categories</h2>
     
     <div class="grid">
-      <!-- Active Link -->
-      <a href="standup/standup.html" class="card">
+      <!-- Active Links -->
+      <a href="/standup/standup.html" class="card">
         <h3>Standup Comedy</h3>
         <p>Watch live standup shows and comedy clips.</p>
       </a>
 
-      <!-- Placeholders: Coming Soon -->
-      <a href="/dad/dad.html" class="card disabled">
+      <a href="/dad/dad.html" class="card">
         <h3>Dad Jokes</h3>
-        <p>The ultimate dad joke collection.</p>
-        <span class="badge">Coming Soon</span>
+        <p>The ultimate collection of groan-worthy dad jokes.</p>
       </a>
 
+      <!-- Placeholders: Coming Soon -->
       <a href="/homevideos/homevideos.html" class="card disabled">
         <h3>Home Videos</h3>
         <p>Funny home clips and caught-on-camera moments.</p>
@@ -141,8 +140,8 @@
   <div id="footer-container"></div>
 
   <script>
-    // Dynamically fetch and inject footer.html
-    fetch('footer.html')
+    // Dynamically fetch and inject footer.html from root
+    fetch('/footer.html')
       .then(response => {
         if (!response.ok) throw new Error('Footer fetch failed');
         return response.text();
@@ -154,5 +153,4 @@
   </script>
 
 </body>
-  
 </html>
