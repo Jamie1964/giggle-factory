@@ -1,104 +1,151 @@
 <!DOCTYPE html>
-<!-- G-F.com/dad/index.html -->
-<html lang="en">
+<html lang="en"> <!-- G-F.com/dad/index.html -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dad Jokes Central | Giggle Factory</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: skyblue;
-            color: #000000;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dad Jokes Central | Giggle Factory</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: skyblue;
+      color: black;
+    }
 
-        header {
-            text-align: center;
-            padding: 10px 0 20px 0;
-        }
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      text-align: center;
+      padding-bottom: 1rem;
+    }
 
-        header img {
-            max-width: 350px;
-            height: auto;
-        }
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
 
-        h1, p.subtitle {
-            text-align: center;
-        }
+    .banner-logo {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      display: block;
+    }
 
-        .subtitle {
-            font-size: 1.1rem;
-            margin-top: -10px;
-            margin-bottom: 30px;
-        }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
 
-        .category-grid {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
 
-        .category-card {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            text-decoration: none;
-            color: #000000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s ease;
+    }
 
-        .category-card:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-2px);
-        }
+    .card:hover {
+      transform: translateY(-3px);
+    }
 
-        .category-card h2 {
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
+    .card.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 
-        .category-card p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
-            color: #333333;
-        }
-    </style>
+    .badge {
+      display: inline-block;
+      background-color: #ff9800;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
+
+    #footer-container {
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <img src="giggle-factory.com/images/giggle-factory-logo.png" alt="Giggle Factory Logo">
-    </header>
+  <header>
+    <!-- Logo pointing to G-F.com homepage -->
+    <a href="https://giggle-factory.com/index.html" class="banner-container">
+      <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
+    </a>
+    <h1>Dad Jokes Central</h1>
+    <p>Guaranteed to make you groan and laugh!</p>
+  </header>
 
-    <main>
-        <h1>Dad Jokes Central</h1>
-        <p class="subtitle">Guaranteed to make you groan and laugh!</p>
+  <main>
+    <h2>Choose a Category</h2>
+    
+    <div class="grid">
+      <!-- Active Link to Animal Dad Jokes -->
+      <a href="/dad/animals/index.html" class="card">
+        <h3>Animal Jokes</h3>
+        <p>The punniest animal jokes in the barnyard.</p>
+      </a>
 
-        <div class="category-grid">
-            <a href="/dad/animals/" class="category-card">
-                <h2>Animal Jokes</h2>
-                <p>The punniest animal jokes in the barnyard.</p>
-            </a>
-            <a href="/dad/food-and-drink/" class="category-card">
-                <h2>Food & Drink Jokes</h2>
-                <p>Deliciously cheesy humor and food puns.</p>
-            </a>
-            <a href="/dad/puns/" class="category-card">
-                <h2>Puns & Wordplay</h2>
-                <p>Clever wordplay to confuse and amuse.</p>
-            </a>
-            <a href="/dad/jobs/" class="category-card">
-                <h2>Work & Office Jokes</h2>
-                <p>Watercooler humor for the workplace.</p>
-            </a>
-        </div>
-    </main>
+      <!-- Placeholders: Coming Soon -->
+      <div class="card disabled">
+        <h3>Food & Drink Jokes</h3>
+        <p>Deliciously cheesy humor and food puns.</p>
+        <span class="badge">Coming Soon</span>
+      </div>
+
+      <div class="card disabled">
+        <h3>Puns & Wordplay</h3>
+        <p>Clever wordplay to confuse and amuse.</p>
+        <span class="badge">Coming Soon</span>
+      </div>
+
+      <div class="card disabled">
+        <h3>Work & Office Jokes</h3>
+        <p>Watercooler humor for the workplace.</p>
+        <span class="badge">Coming Soon</span>
+      </div>
+
+      <div class="card disabled">
+        <h3>More Categories</h3>
+        <p>Fresh dad jokes added regularly!</p>
+        <span class="badge">More Coming Soon</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Dynamic Footer Anchor -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Dynamically fetch and inject footer.html from root
+    fetch('/footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Footer fetch failed');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
 
 </body>
 </html>
