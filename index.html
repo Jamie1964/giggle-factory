@@ -1,7 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="refresh" content="0; url=/standup/standup.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giggle Factory | G-F</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: skyblue;
+      color: black;
+    }
+
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
+
+    .banner-logo {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover; /* Ensures the banner fills nicely without stretching awkwardly */
+      display: block;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #ff9800;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
+
+    #footer-container {
+      margin-top: 3rem;
+    }
+  </style>
 </head>
-<body></body>
+<body>
+
+  <header>
+    <!-- Full Width Banner Logo -->
+    <a href="index.html" class="banner-container">
+      <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
+    </a>
+    <h1>Welcome to Giggle Factory</h1>
+    <p>Your main hub for all things funny!</p>
+  </header>
+
+  <main>
+    <h2>Categories</h2>
+    
+    <div class="grid">
+      <!-- Active Link -->
+      <a href="standup/standup.html" class="card">
+        <h3>Standup Comedy</h3>
+        <p>Watch live standup shows and comedy clips.</p>
+      </a>
+
+      <!-- Placeholders: Coming Soon -->
+      <a href="/dad/dad.html" class="card disabled">
+        <h3>Dad Jokes</h3>
+        <p>The ultimate dad joke collection.</p>
+        <span class="badge">Coming Soon</span>
+      </a>
+
+      <a href="/homevideos/homevideos.html" class="card disabled">
+        <h3>Home Videos</h3>
+        <p>Funny home clips and caught-on-camera moments.</p>
+        <span class="badge">Coming Soon</span>
+      </a>
+
+      <a href="/oops/oops.html" class="card disabled">
+        <h3>Oops / Fails</h3>
+        <p>Bloopers, fails, and hilarious mistakes.</p>
+        <span class="badge">Coming Soon</span>
+      </a>
+
+      <a href="/sports/sports.html" class="card disabled">
+        <h3>Sports Bloopers</h3>
+        <p>Funniest moments in sports history.</p>
+        <span class="badge">Coming Soon</span>
+      </a>
+
+      <div class="card disabled">
+        <h3>More Categories</h3>
+        <p>We are constantly adding new comedy sections.</p>
+        <span class="badge">More Coming Soon</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Dynamic Footer Anchor -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Dynamically fetch and inject footer.html
+    fetch('footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Footer fetch failed');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
+
+</body>
 </html>
