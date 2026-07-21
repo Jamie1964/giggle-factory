@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comedian Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #e8f3ff;
+    }
+
+    .container {
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* LEFT COLUMN */
+    .left {
+        width: 300px;
+        background: #111;
+        color: #fff;
+        overflow-y: auto;
+        padding: 20px;
+        box-shadow: 0 0 20px #000;
+    }
+
+    .left h2 {
+        color: #0096FF;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .left a {
+        display: block;
+        color: #fff;
+        padding: 8px 0;
+        text-decoration: none;
+        font-size: 16px;
+        border-bottom: 1px solid #333;
+    }
+
+    .left a:hover {
+        color: #0096FF;
+    }
+
+    /* RIGHT COLUMN */
+    .right {
+        flex: 1;
+        background: #fff;
+        overflow: hidden;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT COLUMN -->
+    <div class="left">
+        <h2>Comedians</h2>
+
+        <!-- FULL LIST OF ALL COMEDIANS -->
+        <a href="ace_ventura.html" target="viewer">Ace Ventura</a>
+        <a href="adam_sandler.html" target="viewer">Adam Sandler</a>
+        <a href="andrew_schulz.html" target="viewer">Andrew Schulz</a>
+        <a href="anthony_jeselnik.html" target="viewer">Anthony Jeselnik</a>
+        <a href="ari_shaffir.html" target="viewer">Ari Shaffir</a>
+        <a href="aziz_ansari.html" target="viewer">Aziz Ansari</a>
+        <a href="bert_kreischer.html" target="viewer">Bert Kreischer</a>
+        <a href="bill_burr.html" target="viewer">Bill Burr</a>
+        <a href="bill_maher.html" target="viewer">Bill Maher</a>
+        <a href="bo_burnham.html" target="viewer">Bo Burnham</a>
+        <a href="bob_saget.html" target="viewer">Bob Saget</a>
+        <a href="brad_williams.html" target="viewer">Brad Williams</a>
+        <a href="brian_regan.html" target="viewer">Brian Regan</a>
+        <a href="chris_d_elia.html" target="viewer">Chris D'Elia</a>
+        <a href="chris_rock.html" target="viewer">Chris Rock</a>
+        <a href="chris_tucker.html" target="viewer">Chris Tucker</a>
+        <a href="colin_quinn.html" target="viewer">Colin Quinn</a>
+        <a href="daniel_tosh.html" target="viewer">Daniel Tosh</a>
+        <a href="dave_attell.html" target="viewer">Dave Attell</a>
+        <a href="dave_chappelle.html" target="viewer">Dave Chappelle</a>
+        <a href="david_spade.html" target="viewer">David Spade</a>
+        <a href="demetri_martin.html" target="viewer">Demetri Martin</a>
+        <a href="don_rickles.html" target="viewer">Don Rickles</a>
+        <a href="eddie_griffin.html" target="viewer">Eddie Griffin</a>
+        <a href="eddie_murphy.html" target="viewer">Eddie Murphy</a>
+        <a href="felipe_esparza.html" target="viewer">Felipe Esparza</a>
+        <a href="fluffy.html" target="viewer">Gabriel Iglesias</a>
+        <a href="george_carlin.html" target="viewer">George Carlin</a>
+        <a href="gilbert_gottfried.html" target="viewer">Gilbert Gottfried</a>
+        <a href="hannibal_buress.html" target="viewer">Hannibal Buress</a>
+        <a href="iliza.html" target="viewer">Iliza Shlesinger</a>
+        <a href="jerry_seinfeld.html" target="viewer">Jerry Seinfeld</a>
+        <a href="jim_breuer.html" target="viewer">Jim Breuer</a>
+        <a href="jim_carrey.html" target="viewer">Jim Carrey</a>
+        <a href="jim_gaffigan.html" target="viewer">Jim Gaffigan</a>
+        <a href="jim_jefferies.html" target="viewer">Jim Jefferies</a>
+        <a href="jo_koy.html" target="viewer">Jo Koy</a>
+        <a href="joe_rogan.html" target="viewer">Joe Rogan</a>
+        <a href="john_mulaney.html" target="viewer">John Mulaney</a>
+        <a href="john_oliver.html" target="viewer">John Oliver</a>
+        <a href="kevin_hart.html" target="viewer">Kevin Hart</a>
+        <a href="kevin_james.html" target="viewer">Kevin James</a>
+        <a href="lewis_black.html" target="viewer">Lewis Black</a>
+        <a href="louis_ck.html" target="viewer">Louis C.K.</a>
+        <a href="marc_maron.html" target="viewer">Marc Maron</a>
+        <a href="maria_bamford.html" target="viewer">Maria Bamford</a>
+        <a href="matt_rife.html" target="viewer">Matt Rife</a>
+        <a href="michael_che.html" target="viewer">Michael Che</a>
+        <a href="mike_birbiglia.html" target="viewer">Mike Birbiglia</a>
+        <a href="mitch_hedberg.html" target="viewer">Mitch Hedberg</a>
+        <a href="nate_bargatze.html" target="viewer">Nate Bargatze</a>
+        <a href="nick_dipaolo.html" target="viewer">Nick DiPaolo</a>
+        <a href="nick_swardson.html" target="viewer">Nick Swardson</a>
+        <a href="norm_macdonald.html" target="viewer">Norm Macdonald</a>
+        <a href="patton_oswalt.html" target="viewer">Patton Oswalt</a>
+        <a href="ralphie_may.html" target="viewer">Ralphie May</a>
+        <a href="ray_romano.html" target="viewer">Ray Romano</a>
+        <a href="richard_pryor.html" target="viewer">Richard Pryor</a>
+        <a href="ricky_gervais.html" target="viewer">Ricky Gervais</a>
+        <a href="rob_schneider.html" target="viewer">Rob Schneider</a>
+        <a href="rodney_dangerfield.html" target="viewer">Rodney Dangerfield</a>
+        <a href="ron_white.html" target="viewer">Ron White</a>
+        <a href="roseanne_barr.html" target="viewer">Roseanne Barr</a>
+        <a href="sam_morril.html" target="viewer">Sam Morril</a>
+        <a href="sarah_silverman.html" target="viewer">Sarah Silverman</a>
+        <a href="sebastian_maniscalco.html" target="viewer">Sebastian Maniscalco</a>
+        <a href="shane_gillis.html" target="viewer">Shane Gillis</a>
+        <a href="shapel_lacey.html" target="viewer">Shapel Lacey</a>
+        <a href="steve_harvey.html" target="viewer">Steve Harvey</a>
+        <a href="steve_martin.html" target="viewer">Steve Martin</a>
+        <a href="theo_von.html" target="viewer">Theo Von</a>
+        <a href="tim_dillon.html" target="viewer">Tim Dillon</a>
+        <a href="tony_hinchcliffe.html" target="viewer">Tony Hinchcliffe</a>
+        <a href="trevor_noah.html" target="viewer">Trevor Noah</a>
+        <a href="wanda_sykes.html" target="viewer">Wanda Sykes</a>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+        <iframe name="viewer" src=""></iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
