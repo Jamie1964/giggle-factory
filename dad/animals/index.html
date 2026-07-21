@@ -1,157 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giggle Factory | G-F</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: skyblue;
-      color: black;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Dad Jokes | Giggle Factory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: skyblue;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+        }
 
-    header {
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.25);
-      text-align: center;
-      padding-bottom: 1rem;
-    }
+        .page-path {
+            text-align: center;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #333333;
+            margin-bottom: 10px;
+        }
 
-    .banner-container {
-      width: 100%;
-      overflow: hidden;
-      display: block;
-    }
+        header {
+            text-align: center;
+            padding: 10px 0 20px 0;
+        }
 
-    .banner-logo {
-      width: 100%;
-      max-height: 250px;
-      object-fit: cover; /* Ensures the banner fills nicely without stretching awkwardly */
-      display: block;
-    }
+        header img {
+            max-width: 350px;
+            height: auto;
+        }
 
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
+        .joke-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: transform 0.2s ease;
-    }
+        .joke-card {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    .card:hover {
-      transform: translateY(-3px);
-    }
+        .setup {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
 
-    .card.disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .badge {
-      display: inline-block;
-      background-color: #ff9800;
-      color: white;
-      font-size: 0.75rem;
-      font-weight: bold;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      margin-top: 0.5rem;
-    }
-
-    #footer-container {
-      margin-top: 3rem;
-    }
-  </style>
+        .punchline {
+            color: #333333;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <!-- Full Width Banner Logo -->
-    <a href="index.html" class="banner-container">
-      <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
-    </a>
-    <h1>Welcome to Giggle Factory</h1>
-    <p>Your main hub for all things funny!</p>
-  </header>
+    <div class="page-path">G-F.com/dad/animals/index.html</div>
 
-  <main>
-    <h2>Categories</h2>
-    
-    <div class="grid">
-      <!-- Active Link -->
-      <a href="standup/standup.html" class="card">
-        <h3>Standup Comedy</h3>
-        <p>Watch live standup shows and comedy clips.</p>
-      </a>
+    <header>
+        <img src="giggle-factory.com/images/giggle-factory-logo.png" alt="Giggle Factory Logo">
+    </header>
 
-      <!-- Placeholders: Coming Soon -->
-      <a href="/dad/dad.html" class="card disabled">
-        <h3>Dad Jokes</h3>
-        <p>The ultimate dad joke collection.</p>
-        <span class="badge">Coming Soon</span>
-      </a>
+    <main>
+        <h1>Animal Dad Jokes</h1>
 
-      <a href="/homevideos/homevideos.html" class="card disabled">
-        <h3>Home Videos</h3>
-        <p>Funny home clips and caught-on-camera moments.</p>
-        <span class="badge">Coming Soon</span>
-      </a>
-
-      <a href="/oops/oops.html" class="card disabled">
-        <h3>Oops / Fails</h3>
-        <p>Bloopers, fails, and hilarious mistakes.</p>
-        <span class="badge">Coming Soon</span>
-      </a>
-
-      <a href="/sports/sports.html" class="card disabled">
-        <h3>Sports Bloopers</h3>
-        <p>Funniest moments in sports history.</p>
-        <span class="badge">Coming Soon</span>
-      </a>
-
-      <div class="card disabled">
-        <h3>More Categories</h3>
-        <p>We are constantly adding new comedy sections.</p>
-        <span class="badge">More Coming Soon</span>
-      </div>
-    </div>
-  </main>
-
-  <!-- Dynamic Footer Anchor -->
-  <div id="footer-container"></div>
-
-  <script>
-    // Dynamically fetch and inject footer.html
-    fetch('footer.html')
-      .then(response => {
-        if (!response.ok) throw new Error('Footer fetch failed');
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      })
-      .catch(err => console.error('Error loading footer:', err));
-  </script>
+        <div class="joke-container">
+            <div class="joke-card">
+                <div class="setup">1. What do you call a magic dog?</div>
+                <div class="punchline">A Labracadabrador!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">2. Why don't elephants use computers?</div>
+                <div class="punchline">Because they're afraid of the mouse!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">3. What do you call a cold dog?</div>
+                <div class="punchline">A chili dog!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">4. Why do cows have hooves instead of feet?</div>
+                <div class="punchline">Because they lactose!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">5. What do you call an alligator in a vest?</div>
+                <div class="punchline">An investigator!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">6. Why are frogs always so happy?</div>
+                <div class="punchline">They eat whatever bugs them!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">7. What do you get if you cross a cat with a dark horse?</div>
+                <div class="punchline">Kitty Purry!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">8. What do you call a sleeping bull?</div>
+                <div class="punchline">A bulldozer!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">9. Where do sheep go on vacation?</div>
+                <div class="punchline">The Baa-hamas!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">10. Why did the fish blush?</div>
+                <div class="punchline">Because it saw the ocean's bottom!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">11. What do you call a dog that can tell time?</div>
+                <div class="punchline">A watch dog!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">12. What do you call a pony with a cough?</div>
+                <div class="punchline">A little hoarse!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">13. Why don't seagulls fly over the bay?</div>
+                <div class="punchline">Because then they'd be bagels!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">14. What do you call a fly without wings?</div>
+                <div class="punchline">A walk!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">15. Why do bees have sticky hair?</div>
+                <div class="punchline">Because they use honeycombs!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">16. What do you call a duck that gets all As?</div>
+                <div class="punchline">A wise quacker!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">17. What do snakes use to clean their windshields?</div>
+                <div class="punchline">Viper blades!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">18. What do you call a lazy kangaroo?</div>
+                <div class="punchline">A pouch potato!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">19. Why did the dinosaur cross the road?</div>
+                <div class="punchline">Because chickens didn't exist yet!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">20. What do you call a deer with no eyes?</div>
+                <div class="punchline">No idea!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">21. What do you call a deer with no eyes and no legs?</div>
+                <div class="punchline">Still no idea!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">22. What kind of key opens a banana?</div>
+                <div class="punchline">A monkey!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">23. Why are fish so smart?</div>
+                <div class="punchline">Because they live in schools!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">24. What do you call a farm owl that does tricks?</div>
+                <div class="punchline">A Who-dini!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">25. What do you call a bear with no teeth?</div>
+                <div class="punchline">A gummy bear!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">26. Where do cows go for entertainment?</div>
+                <div class="punchline">The moo-vies!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">27. What do you call a pig that does karate?</div>
+                <div class="punchline">A pork chop!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">28. Why don't leopards play hide and seek?</div>
+                <div class="punchline">Because they're always spotted!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">29. What do you call a penguin in the desert?</div>
+                <div class="punchline">Lost!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">30. Why did the turtle cross the road?</div>
+                <div class="punchline">To get to the shell station!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">31. What is a cat's favorite color?</div>
+                <div class="punchline">Purr-ple!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">32. How do you count cows?</div>
+                <div class="punchline">With a cow-culator!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">33. What do you get if you cross a dog and a calculator?</div>
+                <div class="punchline">A friend you can count on!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">34. Why do birds fly south for the winter?</div>
+                <div class="punchline">Because it's too far to walk!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">35. What do you call a fish with no eyes?</div>
+                <div class="punchline">A fsh!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">36. What do you call a clam that won't share?</div>
+                <div class="punchline">Shellfish!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">37. Why did the crab never share his toys?</div>
+                <div class="punchline">Because he was a little shellfish!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">38. What do cats eat for breakfast?</div>
+                <div class="punchline">Mice Krispies!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">39. What do you call a gorilla playing guitar?</div>
+                <div class="punchline">An ape-ist!</div>
+            </div>
+            <div class="joke-card">
+                <div class="setup">40. What is a dog's favorite city?</div>
+                <div class="punchline">New Bark City!</div>
+            </div>
+        </div>
+    </main>
 
 </body>
 </html>
