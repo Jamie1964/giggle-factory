@@ -267,42 +267,32 @@ fetch("/laughs/sidebar.html")
 </div>
 
 
+
 <!-- TIMESTAMP -->
 <div id="page-updated" style="text-align:center;color:#888;margin-top:20px;">
-    last updated: June 15, 2026 — 3:58 PM MDT
+    last updated: July 21, 2026 — 12:01 AM MDT
 </div>
 
-
-<!-- PAGE VIEW COUNTER -->
-<div id="page-counter" style="text-align:center;color:#888;margin-top:10px;">
-    views: loading...
-</div>
-
-<script>
-const PAGE_ID = "dane_cook";
-const COUNTER_KEY = PAGE_ID + "-views";
-let views = localStorage.getItem(COUNTER_KEY);
-if (!views) views = 0;
-views++;
-localStorage.setItem(COUNTER_KEY, views);
-document.getElementById("page-counter").textContent = "views: " + views;
-</script>
-
-
+  </div>
+  
 <!-- FOOTER LOADER -->
 <footer id="footer"></footer>
-
 <script>
-fetch("https://wepaythefreight.com/footer.html")
-  .then(r => r.text())
-  .then(html => {
+  fetch("https://giggle-factory.com/footer.html") // Or "/footer.html" depending on where the file resides
+    .then(r => {
+      if (!r.ok) throw new Error("Footer file not found");
+      return r.text();
+    })
+    .then(html => {
       document.getElementById('footer').innerHTML = html;
-  });
+    })
+    .catch(err => console.error("Error loading footer:", err));
 </script>
-
-
-</div> <!-- END PAGE CONTENT -->
 
 
 </body>
 </html>
+
+
+
+
