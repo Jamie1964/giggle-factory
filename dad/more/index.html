@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Dad Jokes | Giggle Factory</title>
+    <style>
+        :root {
+            --primary-blue: #0b5cab;
+            --light-blue: #e8f3fc;
+            --accent-yellow: #fbc02d;
+            --text-dark: #222222;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-blue);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header & Logo Styling */
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-mask {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .logo-text {
+            font-size: 2.8rem;
+            font-weight: 800;
+            font-style: italic;
+            letter-spacing: -1px;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            opacity: 0.9;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-back {
+            display: inline-block;
+            background: #ffffff;
+            color: var(--primary-blue);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .category-title {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--accent-yellow);
+            padding-bottom: 8px;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
+
+        /* Joke Grid System */
+        .joke-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .joke-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .joke-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .joke-number {
+            font-weight: bold;
+            color: var(--primary-blue);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .joke-setup {
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .joke-punchline {
+            color: #444;
+            font-style: italic;
+            background-color: #f8f9fa;
+            padding: 8px 10px;
+            border-left: 3px solid var(--accent-yellow);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+            border-top: 1px solid #dcdcdc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Logo -->
+    <header>
+        <div class="logo-container">
+            <span class="logo-mask">🎭</span>
+            <span class="logo-text">Giggle-Factory.com</span>
+        </div>
+        <h1>More Classic Dad Jokes</h1>
+        <p>40 extra groaners for any time, place, or occasion!</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="nav-back">← Back to Main Menu</a>
+
+        <!-- Section 1 -->
+        <h2 class="category-title">⭐ Ultimate Classics</h2>
+        <div class="joke-grid">
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#1</div>
+                    <div class="joke-setup">I told my wife she was drawing her eyebrows too high...</div>
+                </div>
+                <div class="joke-punchline">She looked surprised!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#2</div>
+                    <div class="joke-setup">What do you call a fake noodle?</div>
+                </div>
+                <div class="joke-punchline">An impasta!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#3</div>
+                    <div class="joke-setup">Why don't scientists trust atoms?</div>
+                </div>
+                <div class="joke-punchline">Because they make up everything!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#4</div>
+                    <div class="joke-setup">What’s orange and sounds like a parrot?</div>
+                </div>
+                <div class="joke-punchline">A carrot!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#5</div>
+                    <div class="joke-setup">How do you make a tissue dance?</div>
+                </div>
+                <div class="joke-punchline">You put a little boogie in it!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#6</div>
+                    <div class="joke-setup">Why did the invisible man turn down the job offer?</div>
+                </div>
+                <div class="joke-punchline">He couldn't see himself doing it!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#7</div>
+                    <div class="joke-setup">What do you call a factory that makes okay products?</div>
+                </div>
+                <div class="joke-punchline">A satisfactory!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#8</div>
+                    <div class="joke-setup">Why did the golfer bring two pairs of pants?</div>
+                </div>
+                <div class="joke-punchline">In case he got a hole in one!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#9</div>
+                    <div class="joke-setup">Why was the math book sad?</div>
+                </div>
+                <div class="joke-punchline">It had too many problems!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#10</div>
+                    <div class="joke-setup">What do you call a bear with no teeth?</div>
+                </div>
+                <div class="joke-punchline">A gummy bear!</div>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <h2 class="category-title">🚀 Tech & Science Humor</h2>
+        <div class="joke-grid">
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#11</div>
+                    <div class="joke-setup">Why did the computer go to the doctor?</div>
+                </div>
+                <div class="joke-punchline">Because it had a virus!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#12</div>
+                    <div class="joke-setup">Why was the cell phone wearing glasses?</div>
+                </div>
+                <div class="joke-punchline">It lost its contacts!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#13</div>
+                    <div class="joke-setup">How does NASA organize a party?</div>
+                </div>
+                <div class="joke-punchline">They planet!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#14</div>
+                    <div class="joke-setup">Why did the robot go on a diet?</div>
+                </div>
+                <div class="joke-punchline">It had too many bytes!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#15</div>
+                    <div class="joke-setup">What is a computer's favorite snack?</div>
+                </div>
+                <div class="joke-punchline">Microchips!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#16</div>
+                    <div class="joke-setup">Why do programmers prefer dark mode?</div>
+                </div>
+                <div class="joke-punchline">Because light attracts bugs!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#17</div>
+                    <div class="joke-setup">What do you call an alien with three eyes?</div>
+                </div>
+                <div class="joke-punchline">An aliiien!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#18</div>
+                    <div class="joke-setup">Why did the astronaut break up with her boyfriend?</div>
+                </div>
+                <div class="joke-punchline">She needed space!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#19</div>
+                    <div class="joke-setup">Why couldn't the bicycle stand up by itself?</div>
+                </div>
+                <div class="joke-punchline">It was two-tired!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#20</div>
+                    <div class="joke-setup">What did the lightbulb say to the power outlet?</div>
+                </div>
+                <div class="joke-punchline">"I get a kick out of you!"</div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <h2 class="category-title">🏡 Around the House</h2>
+        <div class="joke-grid">
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#21</div>
+                    <div class="joke-setup">Why did the broom go to sleep?</div>
+                </div>
+                <div class="joke-punchline">It was swept off its feet!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#22</div>
+                    <div class="joke-setup">What did one wall say to the other?</div>
+                </div>
+                <div class="joke-punchline">"I'll meet you at the corner!"</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#23</div>
+                    <div class="joke-setup">Why was the couch so quiet?</div>
+                </div>
+                <div class="joke-punchline">It was in cushion-ary mode!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#24</div>
+                    <div class="joke-setup">Why did the door go to therapy?</div>
+                </div>
+                <div class="joke-punchline">It felt unhinged!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#25</div>
+                    <div class="joke-setup">What did the blanket say when it fell off the bed?</div>
+                </div>
+                <div class="joke-punchline">"Oh, sheet!"</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#26</div>
+                    <div class="joke-setup">Why did the lamp fail its test?</div>
+                </div>
+                <div class="joke-punchline">It wasn't very bright!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#27</div>
+                    <div class="joke-setup">Why did the mirror go to school?</div>
+                </div>
+                <div class="joke-punchline">To reflect on its work!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#28</div>
+                    <div class="joke-setup">What did the floor say to the shoes?</div>
+                </div>
+                <div class="joke-punchline">"You're stepping all over me!"</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#29</div>
+                    <div class="joke-setup">Why was the refrigerator running?</div>
+                </div>
+                <div class="joke-punchline">Because you better go catch it!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#30</div>
+                    <div class="joke-setup">Why did the curtain go to jail?</div>
+                </div>
+                <div class="joke-punchline">Because it was drawn into crime!</div>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <h2 class="category-title">🎨 Quick-Witted Groaners</h2>
+        <div class="joke-grid">
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#31</div>
+                    <div class="joke-setup">What do you call a magician who loses their magic?</div>
+                </div>
+                <div class="joke-punchline">Ian!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#32</div>
+                    <div class="joke-setup">Why did the belt get arrested?</div>
+                </div>
+                <div class="joke-punchline">For holding up a pair of pants!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#33</div>
+                    <div class="joke-setup">What do you call a sleeping dinosaur?</div>
+                </div>
+                <div class="joke-punchline">A dino-snore!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#34</div>
+                    <div class="joke-setup">Why did the picture go to prison?</div>
+                </div>
+                <div class="joke-punchline">Because it was framed!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#35</div>
+                    <div class="joke-setup">What is fast, loud, and crisp?</div>
+                </div>
+                <div class="joke-punchline">A rocket chip!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#36</div>
+                    <div class="joke-setup">Why did the stadium get so hot after the game?</div>
+                </div>
+                <div class="joke-punchline">All the fans left!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#37</div>
+                    <div class="joke-setup">What did zero say to eight?</div>
+                </div>
+                <div class="joke-punchline">"Nice belt!"</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#38</div>
+                    <div class="joke-setup">Why don't skeletons fight each other?</div>
+                </div>
+                <div class="joke-punchline">They don't have the guts!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#39</div>
+                    <div class="joke-setup">What do you call a dog that can do magic?</div>
+                </div>
+                <div class="joke-punchline">A Labracadabrador!</div>
+            </div>
+
+            <div class="joke-card">
+                <div>
+                    <div class="joke-number">#40</div>
+                    <div class="joke-setup">Why did the clock get sent to detention?</div>
+                </div>
+                <div class="joke-punchline">It talked too much!</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Giggle Factory. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
