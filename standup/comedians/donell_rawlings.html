@@ -29,7 +29,7 @@
 "></div>
 
 <script>
-fetch("giggle-factory.com/laughs/sidebar.html")
+fetch("/laughs/sidebar.html")
   .then(r => r.text())
   .then(html => document.getElementById("sidebar").innerHTML = html);
 </script>
@@ -40,9 +40,9 @@ fetch("giggle-factory.com/laughs/sidebar.html")
 
 <!-- TOP BANNER -->
 <div style="background:#e8f3ff;text-align:center;padding:0;">
-    <a href="https://giggle-factory.com/index.html">
-        <img src="https://giggle-factory.com/images/WPTF-logo.png"
-             alt="giggle-factory.com Logo"
+    <a href="https://wepaythefreight.com/index.html">
+        <img src="https://wepaythefreight.com/images/WPTF-logo.png"
+             alt="WePayTheFreight.com Logo"
              style="width:100%;max-width:100%;height:160px;object-fit:contain;display:block;margin:0 auto;">
     </a>
 </div>
@@ -87,7 +87,7 @@ fetch("giggle-factory.com/laughs/sidebar.html")
 
 
 <div style="text-align:center;margin:30px 0;">
-    <a href="https://giggle-factory.com/standup/standup.html"
+    <a href="https://wepaythefreight.com/standup/standup.html"
        style="display:inline-block;padding:12px 22px;background:#0096FF;
               color:#fff;font-size:20px;font-weight:bold;border-radius:8px;
               text-decoration:none;box-shadow:0 0 12px #0096FF;">
@@ -292,7 +292,7 @@ document.getElementById("page-counter").textContent = "views: " + views;
 <footer id="footer"></footer>
 
 <script>
-fetch("https://giggle-factory.com/footer.html")
+fetch("https://wepaythefreight.com/footer.html")
   .then(r => r.text())
   .then(html => {
       document.getElementById('footer').innerHTML = html;
