@@ -10,7 +10,7 @@
 </head>
 <body style="margin:0;background:#e8f3ff;color:#fff;font-family:Arial,Helvetica,sans-serif;">
 
-  <!-- SIDEBAR (FETCHED FROM ONE FILE) -->
+  <!-- SIDEBAR (FETCHED FROM RELATIVE PATH) -->
   <div id="sidebar" style="
     width:260px;
     background:#111;
@@ -26,9 +26,14 @@
   "></div>
 
   <script>
-    fetch("https://giggle-factory.com/laughs/sidebar.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("sidebar").innerHTML = html);
+    // Uses standard relative fetching to prevent domain resolution 404s
+    fetch("/laughs/sidebar.html")
+      .then(r => {
+        if (!r.ok) throw new Error("Sidebar file not found");
+        return r.text();
+      })
+      .then(html => document.getElementById("sidebar").innerHTML = html)
+      .catch(err => console.error("Error loading sidebar:", err));
   </script>
 
   <!-- PAGE CONTENT -->
@@ -64,7 +69,7 @@
 
     <!-- BACK TO LIST BUTTON -->
     <div style="text-align:center;margin:30px 0;">
-      <a href="https://giggle-factory.com/laughs/standup/standup.html" style="display:inline-block;padding:12px 22px;background:#0096FF; color:#fff;font-size:20px;font-weight:bold;border-radius:8px; text-decoration:none;box-shadow:0 0 12px #0096FF;">
+      <a href="url?id=8" style="display:inline-block;padding:12px 22px;background:#0096FF; color:#fff;font-size:20px;font-weight:bold;border-radius:8px; text-decoration:none;box-shadow:0 0 12px #0096FF;">
         ← Back to Comedians List
       </a>
     </div>
@@ -141,7 +146,7 @@
           </h3>
           <p style="color:#ffffff;font-size:15px;font-style:italic;">
             Website (Search):
-            <a href="https://www.google.com/search?q=adam+sandler+official+website" target="_blank" style="color:#0096FF;">
+            <a href="url?id=9" target="_blank" style="color:#0096FF;">
               Google Search: Adam Sandler
             </a>
           </p>
@@ -180,37 +185,16 @@
       </div>
 
     </div>
-    <!-- END TWO COLUMN WRAPPER -->
-
-    <!-- SEO BLOCK -->
-    <div style="max-width:900px;margin:40px auto;color:#333;font-size:15px;line-height:1.6; background:#ffffff;padding:20px;border-radius:10px;border:2px solid #0096FF;">
-      <h2 style="color:#0096FF;font-size:26px;margin-top:0;">Adam Sandler SEO</h2>
-      <p>
-        This page is optimized for searches such as <strong>Adam Sandler comedian</strong>, <strong>Adam Sandler stand-up</strong>, <strong>Adam Sandler SNL</strong>, <strong>Adam Sandler tour dates</strong>, and <strong>Adam Sandler comedy clips</strong>.
-      </p>
-      <p>
-        Fans looking for <strong>Adam Sandler jokes</strong>, <strong>Adam Sandler interviews</strong>, <strong>Adam Sandler full sets</strong>, and <strong>Adam Sandler Netflix specials</strong> will find everything they need here.
-      </p>
-      <p>
-        Long‑tail keywords like <strong>Adam Sandler Happy Gilmore</strong>, <strong>Adam Sandler Billy Madison</strong>, <strong>Adam Sandler stand-up 2024</strong>, and <strong>Adam Sandler classic bits</strong> help improve search visibility.
-      </p>
-    </div>
-
-    <!-- TIMESTAMP -->
-    <div id="page-updated" style="text-align:center;color:#888;margin-top:20px;">
-      last updated: June 13, 2026 — 9:23 AM MDT
-    </div>
 
     <!-- FOOTER LOADER -->
     <footer id="footer"></footer>
     <script>
-      fetch("https://giggle-factory.com/footer.html")
+      fetch("/footer.html")
         .then(r => r.text())
         .then(html => { document.getElementById('footer').innerHTML = html; });
     </script>
 
   </div>
-  <!-- END PAGE CONTENT -->
 
 </body>
 </html>
