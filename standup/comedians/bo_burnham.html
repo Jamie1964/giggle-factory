@@ -13,25 +13,29 @@
 
 
 
-<!-- SIDEBAR (FETCHED FROM ONE FILE) -->
+<!-- SIDEBAR -->
 <div id="sidebar" style="
-    width:260px;
-    background:#111;
-    color:#fff;
-    position:fixed;
-    top:0;
-    left:0;
-    bottom:0;
-    overflow-y:auto;
-    padding:120px 15px 15px 15px;
-    box-shadow:0 0 20px #000;
-    z-index:9999;
+  width:260px;
+  background:#e8f3ff;
+  color:#1e3a8a;
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  overflow-y:auto;
+  padding:15px;
+  box-shadow:0 0 20px #000;
+  z-index:9999;
 "></div>
 
 <script>
-fetch("giggle-factory.com/laughs/sidebar.html")
-  .then(r => r.text())
-  .then(html => document.getElementById("sidebar").innerHTML = html);
+  fetch("/laughs/sidebar.html")
+    .then(r => {
+      if (!r.ok) throw new Error("Sidebar file not found");
+      return r.text();
+    })
+    .then(html => document.getElementById("sidebar").innerHTML = html)
+    .catch(err => console.error("Error loading sidebar:", err));
 </script>
 
 <!-- PAGE CONTENT -->
@@ -40,11 +44,9 @@ fetch("giggle-factory.com/laughs/sidebar.html")
 
 <!-- TOP BANNER -->
 <div style="background:#e8f3ff;text-align:center;padding:0;">
-    <a href="https://giggle-factory.com/index.html">
-        <img src="https://giggle-factory.com/images/WPTF-logo.png"
-             alt="giggle-factory.com Logo"
-             style="width:100%;max-width:100%;height:160px;object-fit:contain;display:block;margin:0 auto;">
-    </a>
+  <a href="https://giggle-factory.com/">
+    <img src="https://giggle-factory.com/images/giggle-factory-logo.png" alt="giggle-factory.com Logo" style="width:100%;max-width:100%;height:160px;object-fit:contain;display:block;margin:0 auto;">
+  </a>
 </div>
 
 
