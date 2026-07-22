@@ -1,267 +1,456 @@
-<!-- /dad/puns/index.html - giggle-factory.com -->
 <!DOCTYPE html>
 <html lang="en">
+<!-- G-F.com/dad/puns/index.html -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puns & Wordplay Dad Jokes | Giggle Factory</title>
-    <style>
-        :root {
-            --primary-blue: #0b5cab;
-            --bg-light: #e8f4fc;
-            --card-bg: #ffffff;
-            --text-dark: #222222;
-            --accent-yellow: #f1c40f;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Header / Hero Section */
-        header {
-            background-color: var(--primary-blue);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .logo-container {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            text-decoration: none;
-            color: white;
-            font-size: 2.8rem;
-            font-weight: 800;
-            font-style: italic;
-        }
-
-        .hero-title {
-            font-size: 2.2rem;
-            margin: 10px 0 5px;
-            font-weight: 700;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin: 0;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Back Button */
-        .nav-back {
-            display: inline-block;
-            background: #ffffff;
-            color: var(--primary-blue);
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-            transition: transform 0.15s ease;
-        }
-
-        .nav-back:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Category Section Headers */
-        .category-header {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin: 2.5rem 0 1.5rem;
-            padding-bottom: 8px;
-            border-bottom: 3px solid var(--accent-yellow);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* 3-Column Joke Grid */
-        .joke-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Joke Cards */
-        .joke-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .joke-num {
-            color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .joke-setup {
-            font-weight: 600;
-            font-size: 1.05rem;
-            margin-bottom: 12px;
-            color: #111111;
-            line-height: 1.4;
-        }
-
-        .joke-punchline {
-            background-color: #f8f9fa;
-            border-left: 4px solid var(--accent-yellow);
-            padding: 10px 12px;
-            border-radius: 4px;
-            font-style: italic;
-            color: #444444;
-            font-size: 0.95rem;
-        }
-
-        /* Timestamp Display */
-        .timestamp-container {
-            text-align: center;
-            color: #666666;
-            font-size: 0.85rem;
-            margin: 3rem 0 1rem;
-        }
-
-        /* Footer Container (Loaded via Fetch) */
-        #global-footer {
-            margin-top: 1rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puns & Wordplay Dad Jokes | Giggle Factory</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: skyblue;
+      color: black;
+    }
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
+    .banner-logo {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 1rem auto 0 auto;
+      padding: 0 1rem;
+    }
+    .btn-back {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .btn-back:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-1px);
+    }
+    main {
+      max-width: 1100px;
+      margin: 1.5rem auto 2rem auto;
+      padding: 0 1rem;
+    }
+    .page-title-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .page-title-section h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
+    }
+    .page-title-section p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .category-title {
+      color: #0b5cab;
+      border-bottom: 3px solid #fbc02d;
+      padding-bottom: 8px;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    .joke-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .joke-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .joke-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .joke-number {
+      font-weight: bold;
+      color: #0b5cab;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    .joke-setup {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .joke-punchline {
+      color: #444;
+      font-style: italic;
+      background-color: #f8f9fa;
+      padding: 8px 10px;
+      border-left: 3px solid #fbc02d;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+    #footer-container {
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <a href="https://giggle-factory.com/index.html" class="banner-container">
+      <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
+    </a>
+  </header>
 
-    <!-- Header / Hero -->
-    <header>
-        <a href="https://giggle-factory.com/index.html" class="logo-container">
-            <span>🎭</span> Giggle-Factory.com
-        </a>
-        <h1 class="hero-title">Puns & Wordplay Dad Jokes</h1>
-        <p class="hero-subtitle">40 clever puns to confuse and amuse your friends and family!</p>
-    </header>
+  <div class="nav-container">
+    <a href="https://giggle-factory.com/dad/index.html" class="btn-back">&larr; Back to Main Menu</a>
+  </div>
 
-    <div class="container">
-        <!-- Back Navigation Button -->
-        <a href="https://giggle-factory.com/dad/index.html" class="nav-back">← Back to Main Menu</a>
-
-        <!-- Category 1 -->
-        <h2 class="category-header">🧠 Everyday Logic & Clever Puns</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#1</div>
-                    <div class="joke-setup">I'm reading a book on anti-gravity...</div>
-                </div>
-                <div class="joke-punchline">I just can't put it down!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#2</div>
-                    <div class="joke-setup">Did you hear about the guy who invented Lifesavers?</div>
-                </div>
-                <div class="joke-punchline">He made a mint!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#3</div>
-                    <div class="joke-setup">I used to play piano by ear...</div>
-                </div>
-                <div class="joke-punchline">Now I use my hands.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#4</div>
-                    <div class="joke-setup">Why don't skeletons fight each other?</div>
-                </div>
-                <div class="joke-punchline">They don't have the guts.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#5</div>
-                    <div class="joke-setup">I told my doctor that I broke my arm in two places...</div>
-                </div>
-                <div class="joke-punchline">He told me to stop going to those places!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#6</div>
-                    <div class="joke-setup">Why was the broom late for work?</div>
-                </div>
-                <div class="joke-punchline">It over-swept!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#7</div>
-                    <div class="joke-setup">What do you call a belt made of watches?</div>
-                </div>
-                <div class="joke-punchline">A waist of time!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#8</div>
-                    <div class="joke-setup">Why did the bicycle fall over?</div>
-                </div>
-                <div class="joke-punchline">Because it was two-tired!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-num">#9</div>
-                    <div class="joke-setup">What do you call a sleeping bull?</div>
-                </div>
-                <div class="joke-punchline">A bulldozer!</div>
-            </div>
-        </div>
-
-        <!-- Dynamic Timestamp Display -->
-        <div class="timestamp-container">
-            last updated: <span id="timestamp-val"></span>
-        </div>
-
-        <!-- Fetched Global Footer -->
-        <div id="global-footer"></div>
+  <main>
+    <div class="page-title-section">
+      <h1>Puns & Wordplay Dad Jokes</h1>
+      <p>40 clever puns to confuse and amuse your friends and family!</p>
     </div>
 
-    <script>
-        // Set dynamic local timestamp
-        const now = new Date();
-        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
-        document.getElementById('timestamp-val').textContent = now.toLocaleDateString('en-US', options);
+    <!-- Section 1 -->
+    <h2 class="category-title">🧠 Everyday Logic & Clever Puns</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#1</div>
+          <div class="joke-setup">I'm reading a book on anti-gravity...</div>
+        </div>
+        <div class="joke-punchline">I just can't put it down!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#2</div>
+          <div class="joke-setup">Did you hear about the guy who invented Lifesavers?</div>
+        </div>
+        <div class="joke-punchline">He made a mint!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#3</div>
+          <div class="joke-setup">I used to play piano by ear...</div>
+        </div>
+        <div class="joke-punchline">Now I use my hands.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#4</div>
+          <div class="joke-setup">Why don't skeletons fight each other?</div>
+        </div>
+        <div class="joke-punchline">They don't have the guts.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#5</div>
+          <div class="joke-setup">I told my doctor that I broke my arm in two places...</div>
+        </div>
+        <div class="joke-punchline">He told me to stop going to those places!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#6</div>
+          <div class="joke-setup">Why was the broom late for work?</div>
+        </div>
+        <div class="joke-punchline">It over-swept!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#7</div>
+          <div class="joke-setup">What do you call a belt made of watches?</div>
+        </div>
+        <div class="joke-punchline">A waist of time!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#8</div>
+          <div class="joke-setup">Why did the bicycle fall over?</div>
+        </div>
+        <div class="joke-punchline">Because it was two-tired!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#9</div>
+          <div class="joke-setup">What do you call a sleeping bull?</div>
+        </div>
+        <div class="joke-punchline">A bulldozer!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#10</div>
+          <div class="joke-setup">Why couldn't the shoes go out to play?</div>
+        </div>
+        <div class="joke-punchline">They were all tied up!</div>
+      </div>
+    </div>
 
-        // Fetch shared global footer
-        fetch('https://giggle-factory.com/footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('global-footer').innerHTML = data;
-            })
-            .catch(err => console.error('Error fetching global footer:', err));
-    </script>
+    <!-- Section 2 -->
+    <h2 class="category-title">💼 Jobs, Trades & Professions</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#11</div>
+          <div class="joke-setup">I hired an archaeologist yesterday...</div>
+        </div>
+        <div class="joke-punchline">Now my career is in ruins!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#12</div>
+          <div class="joke-setup">Why did the baker go to jail?</div>
+        </div>
+        <div class="joke-punchline">He was caught kneading dough illegally!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#13</div>
+          <div class="joke-setup">Why are elevator jokes so good?</div>
+        </div>
+        <div class="joke-punchline">They work on so many levels!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#14</div>
+          <div class="joke-setup">Why did the plumber break up with his girlfriend?</div>
+        </div>
+        <div class="joke-punchline">The relationship was going down the drain!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#15</div>
+          <div class="joke-setup">What do accountants spend their time doing?</div>
+        </div>
+        <div class="joke-punchline">Trying to figure out what adds up!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#16</div>
+          <div class="joke-setup">Why did the electrician get promoted?</div>
+        </div>
+        <div class="joke-punchline">Because he was conducting himself so well!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#17</div>
+          <div class="joke-setup">I used to work at a shoe recycling shop...</div>
+        </div>
+        <div class="joke-punchline">It was sole-destroying work!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#18</div>
+          <div class="joke-setup">Why did the carpenter get fired?</div>
+        </div>
+        <div class="joke-punchline">He just couldn't make ends meet!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#19</div>
+          <div class="joke-setup">What did the gardener say when spring arrived?</div>
+        </div>
+        <div class="joke-punchline">"I'm so excited, I wet my plants!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#20</div>
+          <div class="joke-setup">Why did the tailor get arrested?</div>
+        </div>
+        <div class="joke-punchline">He was caught pressing charges!</div>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <h2 class="category-title">🎨 Time, Words & Alphabet Play</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#21</div>
+          <div class="joke-setup">What did one letter say to the other?</div>
+        </div>
+        <div class="joke-punchline">"I'll see you at the post office!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#22</div>
+          <div class="joke-setup">Why did the clock get sent to detention?</div>
+        </div>
+        <div class="joke-punchline">It talked too much!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#23</div>
+          <div class="joke-setup">What's the longest word in the dictionary?</div>
+        </div>
+        <div class="joke-punchline">"Smiles" - because there's a mile between each 's'!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#24</div>
+          <div class="joke-setup">Why is 'T' so full of energy?</div>
+        </div>
+        <div class="joke-punchline">Because it's in the middle of water!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#25</div>
+          <div class="joke-setup">What letter is a body of water?</div>
+        </div>
+        <div class="joke-punchline">The 'C'!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#26</div>
+          <div class="joke-setup">Why did the calendar get scared?</div>
+        </div>
+        <div class="joke-punchline">Because its days were numbered!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#27</div>
+          <div class="joke-setup">What kind of key opens a banana?</div>
+        </div>
+        <div class="joke-punchline">A mon-key!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#28</div>
+          <div class="joke-setup">Why did the vowel get a penalty?</div>
+        </div>
+        <div class="joke-punchline">It was out of 'U' bounds!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#29</div>
+          <div class="joke-setup">What did the period say to the sentence?</div>
+        </div>
+        <div class="joke-punchline">"Stop right there!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#30</div>
+          <div class="joke-setup">Why did the dictionary go to the hospital?</div>
+        </div>
+        <div class="joke-punchline">It had bad terms!</div>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <h2 class="category-title">🎯 Silly Double Entendres</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#31</div>
+          <div class="joke-setup">I was going to tell a joke about paper...</div>
+        </div>
+        <div class="joke-punchline">But it was tearable!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#32</div>
+          <div class="joke-setup">Did you hear about the fire at the circus?</div>
+        </div>
+        <div class="joke-punchline">It was in tents!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#33</div>
+          <div class="joke-setup">I used to be addicted to the hokey pokey...</div>
+        </div>
+        <div class="joke-punchline">But then I turned myself around!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#34</div>
+          <div class="joke-setup">Why did the pencil go broke?</div>
+        </div>
+        <div class="joke-punchline">Because it was point-less!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#35</div>
+          <div class="joke-setup">How do you organize a space party?</div>
+        </div>
+        <div class="joke-punchline">You planet!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#36</div>
+          <div class="joke-setup">Why did the balloon get grounded?</div>
+        </div>
+        <div class="joke-punchline">It was full of hot air!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#37</div>
+          <div class="joke-setup">What do you call a fake stone?</div>
+        </div>
+        <div class="joke-punchline">A sham-rock!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#38</div>
+          <div class="joke-setup">Why was the match so hot-headed?</div>
+        </div>
+        <div class="joke-punchline">It kept losing its temper!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#39</div>
+          <div class="joke-setup">What did one flag say to the other flag?</div>
+        </div>
+        <div class="joke-punchline">Nothing, it just waved!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#40</div>
+          <div class="joke-setup">Why did the rope get promoted?</div>
+        </div>
+        <div class="joke-punchline">It knew how to tie things together!</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Dynamic Footer Anchor -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('/footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Footer fetch failed');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
 </body>
 </html>
