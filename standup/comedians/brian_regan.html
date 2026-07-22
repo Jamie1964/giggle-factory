@@ -257,32 +257,16 @@
 </div>
 
 
-<!-- TIMESTAMP -->
-<div id="page-updated" style="text-align:center;color:#888;margin-top:20px;">
-    last updated: June 14, 2026 — 7:42 AM MDT
-</div>
 
-
-<!-- PAGE VIEW COUNTER -->
-<div id="page-counter" style="text-align:center;color:#888;margin-top:10px;">
-    views: loading...
-</div>
-
-<script>
-const PAGE_ID = "brian_regan";
-const COUNTER_KEY = PAGE_ID + "-views";
-let views = localStorage.getItem(COUNTER_KEY);
-if (!views) views = 0;
-views++;
-localStorage.setItem(COUNTER_KEY, views);
-document.getElementById("page-counter").textContent = "views: " + views;
-</script>
+  
 <!-- TIMESTAMP -->
 <div id="page-updated" style="text-align:center;color:#888;margin-top:20px;">
     last updated: July 21, 2026 — 10:33 APM MDT
 </div>
 
   </div>
+  
+
   
 <!-- FOOTER LOADER -->
 <footer id="footer"></footer>
@@ -297,8 +281,6 @@ document.getElementById("page-counter").textContent = "views: " + views;
     })
     .catch(err => console.error("Error loading footer:", err));
 </script>
-
-
 </body>
 </html>
 
