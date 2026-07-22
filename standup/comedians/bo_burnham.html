@@ -112,7 +112,7 @@ fetch("giggle-factory.com/laughs/sidebar.html")
     <div style="width:340px;display:flex;flex-direction:column;align-items:center;gap:20px;">
 
 
-        <!-- BIO CARD -->
+       <!-- BIO CARD -->
         <div style="width:300px;background:#1a0f1a;padding:20px;border-radius:10px;
                     border:2px solid #0096FF;box-shadow:0 0 20px #0096FF;text-align:left;">
             <h3 style="color:#0096FF;margin:0 0 10px;font-size:26px;font-weight:bold;text-align:center;">
@@ -268,24 +268,10 @@ fetch("giggle-factory.com/laughs/sidebar.html")
 
 <!-- TIMESTAMP -->
 <div id="page-updated" style="text-align:center;color:#888;margin-top:20px;">
-    last updated: June 15, 2026 — 3:00 PM MDT
-</div>
+    last updated: July 21, 2026 — 10:30 PM MDT
 
 
-<!-- PAGE VIEW COUNTER -->
-<div id="page-counter" style="text-align:center;color:#888;margin-top:10px;">
-    views: loading...
-</div>
 
-<script>
-const PAGE_ID = "bo_burnham";
-const COUNTER_KEY = PAGE_ID + "-views";
-let views = localStorage.getItem(COUNTER_KEY);
-if (!views) views = 0;
-views++;
-localStorage.setItem(COUNTER_KEY, views);
-document.getElementById("page-counter").textContent = "views: " + views;
-</script>
 
 
 <!-- FOOTER LOADER -->
