@@ -1,508 +1,441 @@
-
 <!DOCTYPE html>
 <html lang="en">
+<!-- G-F.com/dad/food/index.html -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food & Drink Dad Jokes | Giggle Factory</title>
-    <style>
-        :root {
-            --primary-blue: #0b5cab;
-            --light-blue: #e8f3fc;
-            --accent-yellow: #fbc02d;
-            --text-dark: #222222;
-            --card-bg: #ffffff;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-blue);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Header & Logo Styling */
-        header {
-            background-color: var(--primary-blue);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 10rem;
-        }
-
-        .logo-mask {
-            font-size: 3rem;
-            line-height: 1;
-        }
-
-        .logo-text {
-            font-size: 2.8rem;
-            font-weight: 800;
-            font-style: italic;
-            letter-spacing: -1px;
-            color: #ffffff;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        header p {
-            margin: 0.5rem 0 0;
-            opacity: 0.9;
-        }
-
-        /* Layout Container */
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .nav-back {
-            display: inline-block;
-            background: #ffffff;
-            color: var(--primary-blue);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .category-title {
-            color: var(--primary-blue);
-            border-bottom: 3px solid var(--accent-yellow);
-            padding-bottom: 8px;
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.6rem;
-        }
-
-        /* Joke Grid System */
-        .joke-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .joke-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 1.25rem;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .joke-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        .joke-number {
-            font-weight: bold;
-            color: var(--primary-blue);
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-        }
-
-        .joke-setup {
-            font-weight: 600;
-            margin-bottom: 12px;
-            font-size: 1rem;
-            line-height: 1.4;
-        }
-
-        .joke-punchline {
-            color: #444;
-            font-style: italic;
-            background-color: #f8f9fa;
-            padding: 8px 10px;
-            border-left: 3px solid var(--accent-yellow);
-            border-radius: 4px;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 3rem;
-            border-top: 1px solid #dcdcdc;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food & Drink Dad Jokes | Giggle Factory</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: skyblue;
+      color: black;
+    }
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
+    .banner-logo {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 1rem auto 0 auto;
+      padding: 0 1rem;
+    }
+    .btn-back {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .btn-back:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-1px);
+    }
+    main {
+      max-width: 1100px;
+      margin: 1.5rem auto 2rem auto;
+      padding: 0 1rem;
+    }
+    .category-title {
+      color: #0b5cab;
+      border-bottom: 3px solid #fbc02d;
+      padding-bottom: 8px;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    .joke-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .joke-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .joke-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .joke-number {
+      font-weight: bold;
+      color: #0b5cab;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    .joke-setup {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .joke-punchline {
+      color: #444;
+      font-style: italic;
+      background-color: #f8f9fa;
+      padding: 8px 10px;
+      border-left: 3px solid #fbc02d;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+    #footer-container {
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <a href="https://giggle-factory.com/index.html" class="banner-container">
+      <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
+    </a>
+    <h1>Food & Drink Dad Jokes</h1>
+    <p>40 deliciously cheesy jokes guaranteed to make you groan!</p>
+  </header>
 
-    <!-- Header / Logo -->
-    <header>
-        <div class="logo-container">
-            <span class="logo-mask">🎭</span>
-            <span class="logo-text">Giggle-Factory.com</span>
+  <div class="nav-container">
+    <a href="https://giggle-factory.com/dad/index.html" class="btn-back">&larr; Back to Main Menu</a>
+  </div>
+
+  <main>
+    <!-- Section 1 -->
+    <h2 class="category-title">🥗 Veggies, Fruit & Produce</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#1</div>
+          <div class="joke-setup">Why did the tomato blush?</div>
         </div>
-        <h1>Food & Drink Dad Jokes</h1>
-        <p>40 deliciously cheesy jokes guaranteed to make you groan!</p>
-    </header>
-
-    <div class="container">
-        <a href="index.html" class="nav-back">← Back to Main Menu</a>
-
-        <!-- Section 1 -->
-        <h2 class="category-title">🥗 Veggies, Fruit & Produce</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#1</div>
-                    <div class="joke-setup">Why did the tomato blush?</div>
-                </div>
-                <div class="joke-punchline">Because it saw the salad dressing!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#2</div>
-                    <div class="joke-setup">What do you call a fake noodle?</div>
-                </div>
-                <div class="joke-punchline">An impasta.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#3</div>
-                    <div class="joke-setup">Why don't eggs tell jokes?</div>
-                </div>
-                <div class="joke-punchline">They'd crack each other up.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#4</div>
-                    <div class="joke-setup">How do sweet potatoes answer the phone?</div>
-                </div>
-                <div class="joke-punchline">"YAM hello!"</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#5</div>
-                    <div class="joke-setup">What did the grape say when it got stepped on?</div>
-                </div>
-                <div class="joke-punchline">Nothing, it just let out a little wine.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#6</div>
-                    <div class="joke-setup">Why was the cucumber so cool?</div>
-                </div>
-                <div class="joke-punchline">Because it was in a pickle!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#7</div>
-                    <div class="joke-setup">What kind of mushroom enters a party first?</div>
-                </div>
-                <div class="joke-punchline">A fungi to be with!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#8</div>
-                    <div class="joke-setup">Why did the banana go to the doctor?</div>
-                </div>
-                <div class="joke-punchline">Because it wasn't peeling well.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#9</div>
-                    <div class="joke-setup">What kind of apple isn't an apple?</div>
-                </div>
-                <div class="joke-punchline">A pineapple!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#10</div>
-                    <div class="joke-setup">Why did the onion cross the road?</div>
-                </div>
-                <div class="joke-punchline">To get to the root of the problem!</div>
-            </div>
+        <div class="joke-punchline">Because it saw the salad dressing!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#2</div>
+          <div class="joke-setup">What do you call a fake noodle?</div>
         </div>
-
-        <!-- Section 2 -->
-        <h2 class="category-title">🧀 Meat, Dairy & Savory</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#11</div>
-                    <div class="joke-setup">What cheese isn't yours?</div>
-                </div>
-                <div class="joke-punchline">Nacho cheese!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#12</div>
-                    <div class="joke-setup">What do you call a sad cheese?</div>
-                </div>
-                <div class="joke-punchline">Blue cheese.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#13</div>
-                    <div class="joke-setup">Why did the bacon break up with the egg?</div>
-                </div>
-                <div class="joke-punchline">Because it felt fried.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#14</div>
-                    <div class="joke-setup">What did one plate say to the other plate?</div>
-                </div>
-                <div class="joke-punchline">"Lunch is on me!"</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#15</div>
-                    <div class="joke-setup">How do you fix a broken pizza?</div>
-                </div>
-                <div class="joke-punchline">With tomato paste!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#16</div>
-                    <div class="joke-setup">Why did the burger go to the gym?</div>
-                </div>
-                <div class="joke-punchline">To get better buns.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#17</div>
-                    <div class="joke-setup">What did the steak say to the grill?</div>
-                </div>
-                <div class="joke-punchline">"Nice to meat you!"</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#18</div>
-                    <div class="joke-setup">Why couldn't the sesame seed leave the casino?</div>
-                </div>
-                <div class="joke-punchline">Because it was on a roll!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#19</div>
-                    <div class="joke-setup">What is a pretzel's favorite dance?</div>
-                </div>
-                <div class="joke-punchline">The Twist!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#20</div>
-                    <div class="joke-setup">Why did the chef put his money in the blender?</div>
-                </div>
-                <div class="joke-punchline">He wanted to make liquid assets!</div>
-            </div>
+        <div class="joke-punchline">An impasta.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#3</div>
+          <div class="joke-setup">Why don't eggs tell jokes?</div>
         </div>
-
-        <!-- Section 3 -->
-        <h2 class="category-title">🍩 Sweets & Bakery</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#21</div>
-                    <div class="joke-setup">What do you call a donut that goes to space?</div>
-                </div>
-                <div class="joke-punchline">An astro-nut!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#22</div>
-                    <div class="joke-setup">Why did the cookie go to the hospital?</div>
-                </div>
-                <div class="joke-punchline">Because it felt crummy.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#23</div>
-                    <div class="joke-setup">What is a ghost’s favorite dessert?</div>
-                </div>
-                <div class="joke-punchline">I-scream!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#24</div>
-                    <div class="joke-setup">Why did the pie go to the dentist?</div>
-                </div>
-                <div class="joke-punchline">It needed a filling!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#25</div>
-                    <div class="joke-setup">Why was the birthday cake so heavy?</div>
-                </div>
-                <div class="joke-punchline">It was full of candles!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#26</div>
-                    <div class="joke-setup">What did the pancake say to the baseball player?</div>
-                </div>
-                <div class="joke-punchline">"Batter up!"</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#27</div>
-                    <div class="joke-setup">Why did the loaf of bread go to therapy?</div>
-                </div>
-                <div class="joke-punchline">It was feeling too kneady.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#28</div>
-                    <div class="joke-setup">Why did the waffle turn down a date?</div>
-                </div>
-                <div class="joke-punchline">It was already taken with maple syrup!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#29</div>
-                    <div class="joke-setup">What do you call a sweet tooth's favorite day?</div>
-                </div>
-                <div class="joke-punchline">Sundae!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#30</div>
-                    <div class="joke-setup">What’s a chocolate bar's favorite country?</div>
-                </div>
-                <div class="joke-punchline">Switzerland!</div>
-            </div>
+        <div class="joke-punchline">They'd crack each other up.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#4</div>
+          <div class="joke-setup">How do sweet potatoes answer the phone?</div>
         </div>
-
-        <!-- Section 4 -->
-        <h2 class="category-title">☕ Drinks & Beverages</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#31</div>
-                    <div class="joke-setup">Why did the coffee file a police report?</div>
-                </div>
-                <div class="joke-punchline">It got mugged!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#32</div>
-                    <div class="joke-setup">How does a cup of coffee stay calm under pressure?</div>
-                </div>
-                <div class="joke-punchline">It stays grounded.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#33</div>
-                    <div class="joke-setup">Why did the milk go to school?</div>
-                </div>
-                <div class="joke-punchline">To get a little butter!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#34</div>
-                    <div class="joke-setup">What did the tea leaves say to the hot water?</div>
-                </div>
-                <div class="joke-punchline">"You bring out the best in me!"</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#35</div>
-                    <div class="joke-setup">Why did the soda get sent to the principal's office?</div>
-                </div>
-                <div class="joke-punchline">It kept popping off!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#36</div>
-                    <div class="joke-setup">Why did the juice box get grounded?</div>
-                </div>
-                <div class="joke-punchline">It was acting too punchy.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#37</div>
-                    <div class="joke-setup">What kind of tea is the hardest to swallow?</div>
-                </div>
-                <div class="joke-punchline">Reality.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#38</div>
-                    <div class="joke-setup">What did the lemonade say to the ice cube?</div>
-                </div>
-                <div class="joke-punchline">"You make me chill!"</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#39</div>
-                    <div class="joke-setup">Why did the teapot sit in the corner?</div>
-                </div>
-                <div class="joke-punchline">Because it was steaming mad!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#40</div>
-                    <div class="joke-setup">Why are espresso shots so reliable?</div>
-                </div>
-                <div class="joke-punchline">They're always express delivery!</div>
-            </div>
+        <div class="joke-punchline">"YAM hello!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#5</div>
+          <div class="joke-setup">What did the grape say when it got stepped on?</div>
         </div>
+        <div class="joke-punchline">Nothing, it just let out a little wine.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#6</div>
+          <div class="joke-setup">Why was the cucumber so cool?</div>
+        </div>
+        <div class="joke-punchline">Because it was in a pickle!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#7</div>
+          <div class="joke-setup">What kind of mushroom enters a party first?</div>
+        </div>
+        <div class="joke-punchline">A fungi to be with!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#8</div>
+          <div class="joke-setup">Why did the banana go to the doctor?</div>
+        </div>
+        <div class="joke-punchline">Because it wasn't peeling well.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#9</div>
+          <div class="joke-setup">What kind of apple isn't an apple?</div>
+        </div>
+        <div class="joke-punchline">A pineapple!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#10</div>
+          <div class="joke-setup">Why did the onion cross the road?</div>
+        </div>
+        <div class="joke-punchline">To get to the root of the problem!</div>
+      </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Giggle Factory. All Rights Reserved.</p>
-    </footer>
+    <!-- Section 2 -->
+    <h2 class="category-title">🧀 Meat, Dairy & Savory</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#11</div>
+          <div class="joke-setup">What cheese isn't yours?</div>
+        </div>
+        <div class="joke-punchline">Nacho cheese!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#12</div>
+          <div class="joke-setup">What do you call a sad cheese?</div>
+        </div>
+        <div class="joke-punchline">Blue cheese.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#13</div>
+          <div class="joke-setup">Why did the bacon break up with the egg?</div>
+        </div>
+        <div class="joke-punchline">Because it felt fried.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#14</div>
+          <div class="joke-setup">What did one plate say to the other plate?</div>
+        </div>
+        <div class="joke-punchline">"Lunch is on me!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#15</div>
+          <div class="joke-setup">How do you fix a broken pizza?</div>
+        </div>
+        <div class="joke-punchline">With tomato paste!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#16</div>
+          <div class="joke-setup">Why did the burger go to the gym?</div>
+        </div>
+        <div class="joke-punchline">To get better buns.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#17</div>
+          <div class="joke-setup">What did the steak say to the grill?</div>
+        </div>
+        <div class="joke-punchline">"Nice to meat you!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#18</div>
+          <div class="joke-setup">Why couldn't the sesame seed leave the casino?</div>
+        </div>
+        <div class="joke-punchline">Because it was on a roll!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#19</div>
+          <div class="joke-setup">What is a pretzel's favorite dance?</div>
+        </div>
+        <div class="joke-punchline">The Twist!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#20</div>
+          <div class="joke-setup">Why did the chef put his money in the blender?</div>
+        </div>
+        <div class="joke-punchline">He wanted to make liquid assets!</div>
+      </div>
+    </div>
 
+    <!-- Section 3 -->
+    <h2 class="category-title">🍩 Sweets & Bakery</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#21</div>
+          <div class="joke-setup">What do you call a donut that goes to space?</div>
+        </div>
+        <div class="joke-punchline">An astro-nut!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#22</div>
+          <div class="joke-setup">Why did the cookie go to the hospital?</div>
+        </div>
+        <div class="joke-punchline">Because it felt crummy.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#23</div>
+          <div class="joke-setup">What is a ghost’s favorite dessert?</div>
+        </div>
+        <div class="joke-punchline">I-scream!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#24</div>
+          <div class="joke-setup">Why did the pie go to the dentist?</div>
+        </div>
+        <div class="joke-punchline">It needed a filling!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#25</div>
+          <div class="joke-setup">Why was the birthday cake so heavy?</div>
+        </div>
+        <div class="joke-punchline">It was full of candles!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#26</div>
+          <div class="joke-setup">What did the pancake say to the baseball player?</div>
+        </div>
+        <div class="joke-punchline">"Batter up!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#27</div>
+          <div class="joke-setup">Why did the loaf of bread go to therapy?</div>
+        </div>
+        <div class="joke-punchline">It was feeling too kneady.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#28</div>
+          <div class="joke-setup">Why did the waffle turn down a date?</div>
+        </div>
+        <div class="joke-punchline">It was already taken with maple syrup!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#29</div>
+          <div class="joke-setup">What do you call a sweet tooth's favorite day?</div>
+        </div>
+        <div class="joke-punchline">Sundae!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#30</div>
+          <div class="joke-setup">What’s a chocolate bar's favorite country?</div>
+        </div>
+        <div class="joke-punchline">Switzerland!</div>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <h2 class="category-title">☕ Drinks & Beverages</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#31</div>
+          <div class="joke-setup">Why did the coffee file a police report?</div>
+        </div>
+        <div class="joke-punchline">It got mugged!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#32</div>
+          <div class="joke-setup">How does a cup of coffee stay calm under pressure?</div>
+        </div>
+        <div class="joke-punchline">It stays grounded.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#33</div>
+          <div class="joke-setup">Why did the milk go to school?</div>
+        </div>
+        <div class="joke-punchline">To get a little butter!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#34</div>
+          <div class="joke-setup">What did the tea leaves say to the hot water?</div>
+        </div>
+        <div class="joke-punchline">"You bring out the best in me!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#35</div>
+          <div class="joke-setup">Why did the soda get sent to the principal's office?</div>
+        </div>
+        <div class="joke-punchline">It kept popping off!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#36</div>
+          <div class="joke-setup">Why did the juice box get grounded?</div>
+        </div>
+        <div class="joke-punchline">It was acting too punchy.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#37</div>
+          <div class="joke-setup">What kind of tea is the hardest to swallow?</div>
+        </div>
+        <div class="joke-punchline">Reality.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#38</div>
+          <div class="joke-setup">What did the lemonade say to the ice cube?</div>
+        </div>
+        <div class="joke-punchline">"You make me chill!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#39</div>
+          <div class="joke-setup">Why did the teapot sit in the corner?</div>
+        </div>
+        <div class="joke-punchline">Because it was steaming mad!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#40</div>
+          <div class="joke-setup">Why are espresso shots so reliable?</div>
+        </div>
+        <div class="joke-punchline">They're always express delivery!</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Dynamic Footer Anchor -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('/footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Footer fetch failed');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
 </body>
 </html>
