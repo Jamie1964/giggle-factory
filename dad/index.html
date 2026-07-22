@@ -1,33 +1,230 @@
-<!-- More Dad Jokes Section -->
-<h2 class="category-title">😄 More Dad Jokes</h2>
-<div class="joke-grid">
+<!DOCTYPE html>
+<html lang="en">
+<!-- G-F.com/dad/index.html -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dad Jokes | Giggle Factory</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: skyblue;
+      color: black;
+    }
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
+    .banner-logo {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 1rem auto 0 auto;
+      padding: 0 1rem;
+    }
+    .btn-back {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .btn-back:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-1px);
+    }
+    main {
+      max-width: 1100px;
+      margin: 1.5rem auto 2rem auto;
+      padding: 0 1rem;
+    }
+    .page-title-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .page-title-section h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
+    }
+    .page-title-section p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .category-title {
+      color: #0b5cab;
+      border-bottom: 3px solid #fbc02d;
+      padding-bottom: 8px;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    .joke-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .joke-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .joke-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .joke-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .joke-number {
+      font-weight: bold;
+      color: #0b5cab;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    .joke-setup {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .joke-punchline {
+      color: #444;
+      font-style: italic;
+      background-color: #f8f9fa;
+      padding: 8px 10px;
+      border-left: 3px solid #fbc02d;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+    #footer-container {
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://giggle-factory.com/index.html" class="banner-container">
+      <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
+    </a>
+  </header>
 
-  <a href="https://giggle-factory.com/dad/work/index.html" class="joke-card-link">
-    <div class="joke-card">
-      <div class="joke-setup">💼 Work & Office Jokes</div>
-      <div class="joke-punchline">40 watercooler jokes to get you through the 9 to 5!</div>
+  <div class="nav-container">
+    <a href="https://giggle-factory.com/index.html" class="btn-back">&larr; Back to Main Menu</a>
+  </div>
+
+  <main>
+    <div class="page-title-section">
+      <h1>Dad Jokes Central</h1>
+      <p>The ultimate collection of groan-worthy puns, one-liners, and classic dad humor!</p>
     </div>
-  </a>
 
-  <a href="https://giggle-factory.com/dad/animals/index.html" class="joke-card-link">
-    <div class="joke-card">
-      <div class="joke-setup">🐶 Animal Dad Jokes</div>
-      <div class="joke-punchline">Paws-itively hilarious jokes about dogs, cats, and wild beasts!</div>
+    <!-- Featured Dad Jokes Section -->
+    <h2 class="category-title">⭐ Featured Classics</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#1</div>
+          <div class="joke-setup">I'm reading a book about anti-gravity...</div>
+        </div>
+        <div class="joke-punchline">It's impossible to put down!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#2</div>
+          <div class="joke-setup">Did you hear about the guy who invented Lifesavers?</div>
+        </div>
+        <div class="joke-punchline">He made a mint!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#3</div>
+          <div class="joke-setup">I used to play piano by ear...</div>
+        </div>
+        <div class="joke-punchline">Now I use my hands!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#4</div>
+          <div class="joke-setup">Why don't skeletons fight each other?</div>
+        </div>
+        <div class="joke-punchline">They don't have the guts!</div>
+      </div>
     </div>
-  </a>
 
-  <a href="https://giggle-factory.com/dad/food/index.html" class="joke-card-link">
-    <div class="joke-card">
-      <div class="joke-setup">🍕 Food & Kitchen Jokes</div>
-      <div class="joke-punchline">Cheesy, corny, and delicious jokes served hot!</div>
+    <!-- More Dad Jokes Section -->
+    <h2 class="category-title">😄 More Dad Jokes</h2>
+    <div class="joke-grid">
+
+      <a href="https://giggle-factory.com/dad/work/index.html" class="joke-card-link">
+        <div class="joke-card">
+          <div class="joke-setup">💼 Work & Office Jokes</div>
+          <div class="joke-punchline">40 watercooler jokes to get you through the 9 to 5!</div>
+        </div>
+      </a>
+
+      <a href="https://giggle-factory.com/dad/animals/index.html" class="joke-card-link">
+        <div class="joke-card">
+          <div class="joke-setup">🐶 Animal Dad Jokes</div>
+          <div class="joke-punchline">Paws-itively hilarious jokes about dogs, cats, and wild beasts!</div>
+        </div>
+      </a>
+
+      <a href="https://giggle-factory.com/dad/food/index.html" class="joke-card-link">
+        <div class="joke-card">
+          <div class="joke-setup">🍕 Food & Kitchen Jokes</div>
+          <div class="joke-punchline">Cheesy, corny, and delicious jokes served hot!</div>
+        </div>
+      </a>
+
+      <a href="https://giggle-factory.com/dad/tech/index.html" class="joke-card-link">
+        <div class="joke-card">
+          <div class="joke-setup">💻 Tech & Computer Jokes</div>
+          <div class="joke-punchline">Byte-sized humor for geeks, coders, and gamers!</div>
+        </div>
+      </a>
+
     </div>
-  </a>
+  </main>
 
-  <a href="https://giggle-factory.com/dad/tech/index.html" class="joke-card-link">
-    <div class="joke-card">
-      <div class="joke-setup">💻 Tech & Computer Jokes</div>
-      <div class="joke-punchline">Byte-sized humor for geeks, coders, and gamers!</div>
-    </div>
-  </a>
+  <!-- Dynamic Footer Anchor -->
+  <div id="footer-container"></div>
 
-</div>
+  <script>
+    fetch('/footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Footer fetch failed');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
+</body>
+</html>
