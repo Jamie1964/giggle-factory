@@ -1,507 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- G-F.com/dad/work/index.html -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work & Office Dad Jokes | Giggle Factory</title>
-    <style>
-        :root {
-            --primary-blue: #0b5cab;
-            --light-blue: #e8f3fc;
-            --accent-yellow: #fbc02d;
-            --text-dark: #222222;
-            --card-bg: #ffffff;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-blue);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Header & Logo Styling */
-        header {
-            background-color: var(--primary-blue);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 0.5rem;
-        }
-
-        .logo-mask {
-            font-size: 3rem;
-            line-height: 1;
-        }
-
-        .logo-text {
-            font-size: 2.8rem;
-            font-weight: 800;
-            font-style: italic;
-            letter-spacing: -1px;
-            color: #ffffff;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        header p {
-            margin: 0.5rem 0 0;
-            opacity: 0.9;
-        }
-
-        /* Layout Container */
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .nav-back {
-            display: inline-block;
-            background: #ffffff;
-            color: var(--primary-blue);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .category-title {
-            color: var(--primary-blue);
-            border-bottom: 3px solid var(--accent-yellow);
-            padding-bottom: 8px;
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.6rem;
-        }
-
-        /* Joke Grid System */
-        .joke-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .joke-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 1.25rem;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .joke-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        .joke-number {
-            font-weight: bold;
-            color: var(--primary-blue);
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-        }
-
-        .joke-setup {
-            font-weight: 600;
-            margin-bottom: 12px;
-            font-size: 1rem;
-            line-height: 1.4;
-        }
-
-        .joke-punchline {
-            color: #444;
-            font-style: italic;
-            background-color: #f8f9fa;
-            padding: 8px 10px;
-            border-left: 3px solid var(--accent-yellow);
-            border-radius: 4px;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 3rem;
-            border-top: 1px solid #dcdcdc;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work & Office Dad Jokes | Giggle Factory</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: skyblue;
+      color: black;
+    }
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.25);
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    .banner-container {
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
+    .banner-logo {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 1rem auto 0 auto;
+      padding: 0 1rem;
+    }
+    .btn-back {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .btn-back:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-1px);
+    }
+    main {
+      max-width: 1100px;
+      margin: 1.5rem auto 2rem auto;
+      padding: 0 1rem;
+    }
+    .page-title-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .page-title-section h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
+    }
+    .page-title-section p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .category-title {
+      color: #0b5cab;
+      border-bottom: 3px solid #fbc02d;
+      padding-bottom: 8px;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    .joke-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .joke-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .joke-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .joke-number {
+      font-weight: bold;
+      color: #0b5cab;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    .joke-setup {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .joke-punchline {
+      color: #444;
+      font-style: italic;
+      background-color: #f8f9fa;
+      padding: 8px 10px;
+      border-left: 3px solid #fbc02d;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+    #footer-container {
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <a href="https://giggle-factory.com/index.html" class="banner-container">
+      <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
+    </a>
+  </header>
 
-    <!-- Header / Logo -->
-    <header>
-        <div class="logo-container">
-            <span class="logo-mask">🎭</span>
-            <span class="logo-text">Giggle-Factory.com</span>
-        </div>
-        <h1>Work & Office Dad Jokes</h1>
-        <p>40 watercooler jokes to help you survive the 9 to 5!</p>
-    </header>
+  <div class="nav-container">
+    <a href="https://giggle-factory.com/dad/index.html" class="btn-back">&larr; Back to Main Menu</a>
+  </div>
 
-    <div class="container">
-        <a href="index.html" class="nav-back">← Back to Main Menu</a>
-
-        <!-- Section 1 -->
-        <h2 class="category-title">💼 Office Life & Desk Humor</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#1</div>
-                    <div class="joke-setup">Why did the employee get fired from the calendar factory?</div>
-                </div>
-                <div class="joke-punchline">He took a couple of days off!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#2</div>
-                    <div class="joke-setup">Why do we tell actors to "break a leg"?</div>
-                </div>
-                <div class="joke-punchline">Because every play has a cast!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#3</div>
-                    <div class="joke-setup">How do construction workers party?</div>
-                </div>
-                <div class="joke-punchline">They raise the roof!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#4</div>
-                    <div class="joke-setup">Why did the banker quit her job?</div>
-                </div>
-                <div class="joke-punchline">She lost interest.</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#5</div>
-                    <div class="joke-setup">What is the best way to criticize your boss?</div>
-                </div>
-                <div class="joke-punchline">Very quietly, to yourself!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#6</div>
-                    <div class="joke-setup">Why did the scarecrow get promoted?</div>
-                </div>
-                <div class="joke-punchline">Because he was outstanding in his field!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#7</div>
-                    <div class="joke-setup">My boss told me to have a good day...</div>
-                </div>
-                <div class="joke-punchline">So I went home!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#8</div>
-                    <div class="joke-setup">Why was the computer cold at the office?</div>
-                </div>
-                <div class="joke-punchline">It left its Windows open!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#9</div>
-                    <div class="joke-setup">What do you call a person who loves Mondays?</div>
-                </div>
-                <div class="joke-punchline">Retired!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#10</div>
-                    <div class="joke-setup">Why did the stapler get promoted?</div>
-                </div>
-                <div class="joke-punchline">Because it kept everything together!</div>
-            </div>
-        </div>
-
-        <!-- Section 2 -->
-        <h2 class="category-title">📈 Meetings & Management</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#11</div>
-                    <div class="joke-setup">Why do team meetings take so long?</div>
-                </div>
-                <div class="joke-punchline">Because everyone wants to put their two cents in!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#12</div>
-                    <div class="joke-setup">How many managers does it take to change a lightbulb?</div>
-                </div>
-                <div class="joke-punchline">None, they delegate it to someone else!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#13</div>
-                    <div class="joke-setup">What’s an astronaut's favorite key on the keyboard?</div>
-                </div>
-                <div class="joke-punchline">The Spacebar!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#14</div>
-                    <div class="joke-setup">Why don't scientists trust atoms in the workplace?</div>
-                </div>
-                <div class="joke-punchline">Because they make up everything!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#15</div>
-                    <div class="joke-setup">What did the accountant say when asked about his job?</div>
-                </div>
-                <div class="joke-punchline">"It's a taxing profession!"</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#16</div>
-                    <div class="joke-setup">Why did the clock get sent to HR?</div>
-                </div>
-                <div class="joke-punchline">It had too much overtime!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#17</div>
-                    <div class="joke-setup">What do you call a priest who becomes a lawyer?</div>
-                </div>
-                <div class="joke-punchline">A father-in-law!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#18</div>
-                    <div class="joke-setup">Why did the golfer bring extra pants to the office?</div>
-                </div>
-                <div class="joke-punchline">In case he got a hole in one!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#19</div>
-                    <div class="joke-setup">Why did the belt get arrested at work?</div>
-                </div>
-                <div class="joke-punchline">For holding up a pair of pants!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#20</div>
-                    <div class="joke-setup">Why was the math book sad at work?</div>
-                </div>
-                <div class="joke-punchline">It had too many problems!</div>
-            </div>
-        </div>
-
-        <!-- Section 3 -->
-        <h2 class="category-title">☕ Coffee Breaks & Tech Support</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#21</div>
-                    <div class="joke-setup">How do IT guys drink coffee?</div>
-                </div>
-                <div class="joke-punchline">Java-style!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#22</div>
-                    <div class="joke-setup">Why did the computer go to the doctor?</div>
-                </div>
-                <div class="joke-punchline">Because it had a virus!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#23</div>
-                    <div class="joke-setup">What is a programmer's favorite place to hang out?</div>
-                </div>
-                <div class="joke-punchline">The Foo Bar!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#24</div>
-                    <div class="joke-setup">Why did the Web Developer walk out of the room?</div>
-                </div>
-                <div class="joke-punchline">Because of the bad domain name!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#25</div>
-                    <div class="joke-setup">Why was the keyboard tired after work?</div>
-                </div>
-                <div class="joke-punchline">Because it worked two shifts!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#26</div>
-                    <div class="joke-setup">What do you call a computer that sings?</div>
-                </div>
-                <div class="joke-punchline">A Dell!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#27</div>
-                    <div class="joke-setup">Why did the coffee file a complaint at work?</div>
-                </div>
-                <div class="joke-punchline">It got mugged in the breakroom!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#28</div>
-                    <div class="joke-setup">How does a computer stay cool under pressure?</div>
-                </div>
-                <div class="joke-punchline">It turns on its fan!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#29</div>
-                    <div class="joke-setup">Why did the smartphone get a promotion?</div>
-                </div>
-                <div class="joke-punchline">It was super smart!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#30</div>
-                    <div class="joke-setup">Why did the wifi router break up with the modem?</div>
-                </div>
-                <div class="joke-punchline">There was no connection!</div>
-            </div>
-        </div>
-
-        <!-- Section 4 -->
-        <h2 class="category-title">⏳ Payday & Career Advice</h2>
-        <div class="joke-grid">
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#31</div>
-                    <div class="joke-setup">Why did the man get a job at a bakery?</div>
-                </div>
-                <div class="joke-punchline">Because he kneaded dough!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#32</div>
-                    <div class="joke-setup">What is a ghost’s favorite job?</div>
-                </div>
-                <div class="joke-punchline">A spirit guide!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#33</div>
-                    <div class="joke-setup">Why did the musician get a second job?</div>
-                </div>
-                <div class="joke-punchline">To make extra notes!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#34</div>
-                    <div class="joke-setup">What job can you do where you can beat people up legally?</div>
-                </div>
-                <div class="joke-punchline">A drummer!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#35</div>
-                    <div class="joke-setup">Why did the man work at the shoe factory?</div>
-                </div>
-                <div class="joke-punchline">He thought it was a sole-ful experience!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#36</div>
-                    <div class="joke-setup">What do you call a firefighter who loses his job?</div>
-                </div>
-                <div class="joke-punchline">Fired!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#37</div>
-                    <div class="joke-setup">Why was the lumberjack hired on the spot?</div>
-                </div>
-                <div class="joke-punchline">He had great log-ic!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#38</div>
-                    <div class="joke-setup">Why did the artist switch jobs?</div>
-                </div>
-                <div class="joke-punchline">He wanted to draw a bigger salary!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#39</div>
-                    <div class="joke-setup">Why did the barber win the race?</div>
-                </div>
-                <div class="joke-punchline">He took a shortcut!</div>
-            </div>
-
-            <div class="joke-card">
-                <div>
-                    <div class="joke-number">#40</div>
-                    <div class="joke-setup">What’s the best part about working from home?</div>
-                </div>
-                <div class="joke-punchline">The commute is effortless!</div>
-            </div>
-        </div>
+  <main>
+    <div class="page-title-section">
+      <h1>Work & Office Dad Jokes</h1>
+      <p>40 watercooler jokes to help you survive the 9 to 5!</p>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Giggle Factory. All Rights Reserved.</p>
-    </footer>
+    <!-- Section 1 -->
+    <h2 class="category-title">💼 Office Life & Desk Humor</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#1</div>
+          <div class="joke-setup">Why did the employee get fired from the calendar factory?</div>
+        </div>
+        <div class="joke-punchline">He took a couple of days off!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#2</div>
+          <div class="joke-setup">Why do we tell actors to "break a leg"?</div>
+        </div>
+        <div class="joke-punchline">Because every play has a cast!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#3</div>
+          <div class="joke-setup">How do construction workers party?</div>
+        </div>
+        <div class="joke-punchline">They raise the roof!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#4</div>
+          <div class="joke-setup">Why did the banker quit her job?</div>
+        </div>
+        <div class="joke-punchline">She lost interest.</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#5</div>
+          <div class="joke-setup">What is the best way to criticize your boss?</div>
+        </div>
+        <div class="joke-punchline">Very quietly, to yourself!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#6</div>
+          <div class="joke-setup">Why did the scarecrow get promoted?</div>
+        </div>
+        <div class="joke-punchline">Because he was outstanding in his field!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#7</div>
+          <div class="joke-setup">My boss told me to have a good day...</div>
+        </div>
+        <div class="joke-punchline">So I went home!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#8</div>
+          <div class="joke-setup">Why was the computer cold at the office?</div>
+        </div>
+        <div class="joke-punchline">It left its Windows open!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#9</div>
+          <div class="joke-setup">What do you call a person who loves Mondays?</div>
+        </div>
+        <div class="joke-punchline">Retired!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#10</div>
+          <div class="joke-setup">Why did the stapler get promoted?</div>
+        </div>
+        <div class="joke-punchline">Because it kept everything together!</div>
+      </div>
+    </div>
 
+    <!-- Section 2 -->
+    <h2 class="category-title">📈 Meetings & Management</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#11</div>
+          <div class="joke-setup">Why do team meetings take so long?</div>
+        </div>
+        <div class="joke-punchline">Because everyone wants to put their two cents in!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#12</div>
+          <div class="joke-setup">How many managers does it take to change a lightbulb?</div>
+        </div>
+        <div class="joke-punchline">None, they delegate it to someone else!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#13</div>
+          <div class="joke-setup">What’s an astronaut's favorite key on the keyboard?</div>
+        </div>
+        <div class="joke-punchline">The Spacebar!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#14</div>
+          <div class="joke-setup">Why don't scientists trust atoms in the workplace?</div>
+        </div>
+        <div class="joke-punchline">Because they make up everything!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#15</div>
+          <div class="joke-setup">What did the accountant say when asked about his job?</div>
+        </div>
+        <div class="joke-punchline">"It's a taxing profession!"</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#16</div>
+          <div class="joke-setup">Why did the clock get sent to HR?</div>
+        </div>
+        <div class="joke-punchline">It had too much overtime!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#17</div>
+          <div class="joke-setup">What do you call a priest who becomes a lawyer?</div>
+        </div>
+        <div class="joke-punchline">A father-in-law!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#18</div>
+          <div class="joke-setup">Why did the golfer bring extra pants to the office?</div>
+        </div>
+        <div class="joke-punchline">In case he got a hole in one!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#19</div>
+          <div class="joke-setup">Why did the belt get arrested at work?</div>
+        </div>
+        <div class="joke-punchline">For holding up a pair of pants!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#20</div>
+          <div class="joke-setup">Why was the math book sad at work?</div>
+        </div>
+        <div class="joke-punchline">It had too many problems!</div>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <h2 class="category-title">☕ Coffee Breaks & Tech Support</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#21</div>
+          <div class="joke-setup">How do IT guys drink coffee?</div>
+        </div>
+        <div class="joke-punchline">Java-style!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#22</div>
+          <div class="joke-setup">Why did the computer go to the doctor?</div>
+        </div>
+        <div class="joke-punchline">Because it had a virus!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#23</div>
+          <div class="joke-setup">What is a programmer's favorite place to hang out?</div>
+        </div>
+        <div class="joke-punchline">The Foo Bar!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#24</div>
+          <div class="joke-setup">Why did the Web Developer walk out of the room?</div>
+        </div>
+        <div class="joke-punchline">Because of the bad domain name!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#25</div>
+          <div class="joke-setup">Why was the keyboard tired after work?</div>
+        </div>
+        <div class="joke-punchline">Because it worked two shifts!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#26</div>
+          <div class="joke-setup">What do you call a computer that sings?</div>
+        </div>
+        <div class="joke-punchline">A Dell!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#27</div>
+          <div class="joke-setup">Why did the coffee file a complaint at work?</div>
+        </div>
+        <div class="joke-punchline">It got mugged in the breakroom!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#28</div>
+          <div class="joke-setup">How does a computer stay cool under pressure?</div>
+        </div>
+        <div class="joke-punchline">It turns on its fan!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#29</div>
+          <div class="joke-setup">Why did the smartphone get a promotion?</div>
+        </div>
+        <div class="joke-punchline">It was super smart!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#30</div>
+          <div class="joke-setup">Why did the wifi router break up with the modem?</div>
+        </div>
+        <div class="joke-punchline">There was no connection!</div>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <h2 class="category-title">⏳ Payday & Career Advice</h2>
+    <div class="joke-grid">
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#31</div>
+          <div class="joke-setup">Why did the man get a job at a bakery?</div>
+        </div>
+        <div class="joke-punchline">Because he kneaded dough!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#32</div>
+          <div class="joke-setup">What is a ghost’s favorite job?</div>
+        </div>
+        <div class="joke-punchline">A spirit guide!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#33</div>
+          <div class="joke-setup">Why did the musician get a second job?</div>
+        </div>
+        <div class="joke-punchline">To make extra notes!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#34</div>
+          <div class="joke-setup">What job can you do where you can beat people up legally?</div>
+        </div>
+        <div class="joke-punchline">A drummer!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#35</div>
+          <div class="joke-setup">Why did the man work at the shoe factory?</div>
+        </div>
+        <div class="joke-punchline">He thought it was a sole-ful experience!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#36</div>
+          <div class="joke-setup">What do you call a firefighter who loses his job?</div>
+        </div>
+        <div class="joke-punchline">Fired!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#37</div>
+          <div class="joke-setup">Why was the lumberjack hired on the spot?</div>
+        </div>
+        <div class="joke-punchline">He had great log-ic!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#38</div>
+          <div class="joke-setup">Why did the artist switch jobs?</div>
+        </div>
+        <div class="joke-punchline">He wanted to draw a bigger salary!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#39</div>
+          <div class="joke-setup">Why did the barber win the race?</div>
+        </div>
+        <div class="joke-punchline">He took a shortcut!</div>
+      </div>
+      <div class="joke-card">
+        <div>
+          <div class="joke-number">#40</div>
+          <div class="joke-setup">Why did the worker bring a ladder to work?</div>
+        </div>
+        <div class="joke-punchline">To reach the top of the corporate ladder!</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Dynamic Footer Anchor -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('/footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Footer fetch failed');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
 </body>
 </html>
