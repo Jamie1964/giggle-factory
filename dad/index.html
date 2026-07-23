@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dad Jokes Central | Giggle Factory</title>
+  <title>Dad Jokes Menu | Giggle Factory</title>
   <style>
     body {
       margin: 0;
@@ -77,7 +77,7 @@
     }
     .joke-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 1.25rem;
     }
     .joke-card-link {
@@ -88,7 +88,7 @@
     .joke-card {
       background-color: #ffffff;
       border-radius: 10px;
-      padding: 1.25rem;
+      padding: 1.5rem;
       box-shadow: 0 3px 8px rgba(0,0,0,0.06);
       display: flex;
       flex-direction: column;
@@ -101,26 +101,21 @@
       transform: translateY(-3px);
       box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
-    .joke-number {
-      font-weight: bold;
-      color: #0b5cab;
-      font-size: 0.85rem;
-      margin-bottom: 8px;
-    }
     .joke-setup {
-      font-weight: 600;
-      margin-bottom: 12px;
-      font-size: 1rem;
-      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #0b5cab;
     }
     .joke-punchline {
       color: #444;
-      font-style: italic;
+      font-style: normal;
       background-color: #f8f9fa;
-      padding: 8px 10px;
+      padding: 10px;
       border-left: 3px solid #fbc02d;
       border-radius: 4px;
       font-size: 0.95rem;
+      line-height: 1.4;
     }
     #footer-container {
       margin-top: 3rem;
@@ -140,51 +135,17 @@
 
   <main>
     <div class="page-title-section">
-      <h1>Dad Jokes Central</h1>
-      <p>The ultimate collection of groan-worthy puns, one-liners, and classic dad humor!</p>
+      <h1>Dad Jokes Menu</h1>
+      <p>Select a category below to explore groan-worthy puns and classic dad humor!</p>
     </div>
 
-    <!-- Featured Dad Jokes Section -->
-    <h2 class="category-title">⭐ Featured Classics</h2>
-    <div class="joke-grid">
-      <div class="joke-card">
-        <div>
-          <div class="joke-number">#1</div>
-          <div class="joke-setup">I'm reading a book about anti-gravity...</div>
-        </div>
-        <div class="joke-punchline">It's impossible to put down!</div>
-      </div>
-      <div class="joke-card">
-        <div>
-          <div class="joke-number">#2</div>
-          <div class="joke-setup">Did you hear about the guy who invented Lifesavers?</div>
-        </div>
-        <div class="joke-punchline">He made a mint!</div>
-      </div>
-      <div class="joke-card">
-        <div>
-          <div class="joke-number">#3</div>
-          <div class="joke-setup">I used to play piano by ear...</div>
-        </div>
-        <div class="joke-punchline">Now I use my hands!</div>
-      </div>
-      <div class="joke-card">
-        <div>
-          <div class="joke-number">#4</div>
-          <div class="joke-setup">Why don't skeletons fight each other?</div>
-        </div>
-        <div class="joke-punchline">They don't have the guts!</div>
-      </div>
-    </div>
-
-    <!-- More Dad Jokes Categories -->
-    <h2 class="category-title">😄 More Dad Jokes</h2>
+    <h2 class="category-title">📂 Joke Categories</h2>
     <div class="joke-grid">
 
       <a href="https://giggle-factory.com/dad/work/index.html" class="joke-card-link">
         <div class="joke-card">
           <div class="joke-setup">💼 Work & Office Jokes</div>
-          <div class="joke-punchline">40 watercooler jokes to get you through the 9 to 5!</div>
+          <div class="joke-punchline">40 watercooler jokes to help you survive the 9 to 5!</div>
         </div>
       </a>
 
