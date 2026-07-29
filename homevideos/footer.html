@@ -23,7 +23,8 @@
     </p>
 
     <script>
-      (function updatePageViews() {
+      // Ensures execution even when loaded dynamically via fetch
+      (function() {
         const pageKey = 'counter_' + encodeURIComponent(window.location.host + window.location.pathname);
         let views = localStorage.getItem(pageKey);
         
@@ -34,7 +35,11 @@
         }
         
         localStorage.setItem(pageKey, views);
-        document.getElementById('page-view-count').textContent = views;
+        
+        const counterEl = document.getElementById('page-view-count');
+        if (counterEl) {
+          counterEl.textContent = views;
+        }
       })();
     </script>
 
