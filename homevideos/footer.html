@@ -4,3 +4,23 @@
     </a>
 </div>
 <p>© 2026 <a href="https://jamiespages.com">jamiespages.com</a> All Rights Reserved</p>
+<p style="font-size: 0.8rem; opacity: 0.7;">
+  Views: <span id="page-view-count">...</span>
+</p>
+
+<script>
+  (function updatePageViews() {
+    // Generates a unique key for each page using domain + current path
+    const pageKey = encodeURIComponent(window.location.host + window.location.pathname);
+    
+    // Calls the counter API
+    fetch(`https://api.countapi.xyz/hit/giggle-factory.com/${pageKey}`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('page-view-count').textContent = data.value;
+      })
+      .catch(err => {
+        console.error('Counter error:', err);
+      });
+  })();
+</script>
