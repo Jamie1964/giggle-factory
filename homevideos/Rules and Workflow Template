@@ -1,0 +1,164 @@
+Here is a comprehensive Rules and Workflow Template designed to capture our exact directory structure, naming conventions, formatting standards, and project constraints. You can save this to your repository (e.g., as workflow-rules.md or README.md) so you can seamlessly pick right back up after the reset.
+
+Giggle Factory: Web Development & Video Index Workflow
+1. Project Overview & Scope
+Primary Domain: [https://giggle-factory.com/](https://giggle-factory.com/)
+
+Subdirectory: /homevideos/
+
+Core Goal: Maintain and update a responsive, SEO-optimized directory of funny home video pages and their central index.
+
+2. File Naming & Documentation Rules
+Exact Filename Comment: Every single HTML file across all web projects must include the exact file path and name as an HTML comment at the very top:
+
+HTML
+<!-- giggle-factory.com/homevideos/FILENAME.html -->
+YouTube ID Integration: Individual video pages must use the exact, valid YouTube video ID for both their filename (e.g., pz9Q6TorjhM.html) and all embedded player / thumbnail sources.
+
+Link Style: Always use absolute hard links for website navigation rather than relative links.
+
+3. Page Layout & Technical Standards
+Responsive Template: Use a clean CSS Grid layout for card containers (repeat(auto-fill, minmax(320px, 1fr))) and flexbox for card structures.
+
+Branding & Assets: Maintain the signature top banner container pointing to the main site logo ([https://giggle-factory.com/images/giggle-factory-logo.png](https://giggle-factory.com/images/giggle-factory-logo.png)).
+
+Metadata & SEO:
+
+Include descriptive <meta name="description"> and <meta name="keywords"> tags.
+
+Embed valid Schema.org VideoObject structured data in a <script type="application/ld+json"> block.
+
+Dynamic Footer: Include a dynamic JavaScript fetch for shared components where applicable:
+
+HTML
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+</script>
+Timestamps: Add precise last-updated timestamps including exact minutes and time zones (e.g., July 28, 2026, 8:55 PM MDT). Note: Page view counters in footers are temporarily disabled per active rules.
+
+4. Master Templates
+Template A: Individual Video Page (FILENAME.html)
+HTML
+<!-- giggle-factory.com/homevideos/YOUTUBE_ID.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Title | Giggle Factory</title>
+    
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="Detailed description of the video.">
+    <meta name="keywords" content="keywords, tags, video">
+    <link rel="canonical" href="https://giggle-factory.com/homevideos/YOUTUBE_ID.html">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Video Title | Giggle Factory">
+    <meta property="og:description" content="Detailed description of the video.">
+    <meta property="og:type" content="video.other">
+    <meta property="og:url" content="https://giggle-factory.com/homevideos/YOUTUBE_ID.html">
+
+    <!-- Schema.org VideoObject Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Video Title",
+      "description": "Detailed description of the video.",
+      "thumbnailUrl": "https://img.youtube.com/vi/YOUTUBE_ID/hqdefault.jpg",
+      "uploadDate": "YYYY-MM-DD",
+      "duration": "PT00M00S",
+      "embedUrl": "https://www.youtube.com/embed/YOUTUBE_ID",
+      "author": {
+        "@type": "Organization",
+        "name": "Source Name"
+      }
+    }
+    </script>
+
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #9cdbf0; color: #333; margin: 0; padding: 0 0 20px 0; }
+        .top-banner-container { background-color: #003e92; text-align: center; padding: 15px 0; margin-bottom: 25px; }
+        .top-banner-container img { max-width: 450px; width: 90%; height: auto; display: block; margin: 0 auto; }
+        .nav-bar { text-align: center; margin-bottom: 25px; }
+        .btn-main-menu { display: inline-block; background-color: #e2801e; color: #ffffff; padding: 12px 28px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 6px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); }
+        .btn-main-menu:hover { background-color: #c4680e; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .video-container { background: #ffffff; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .video-title { font-size: 1.8rem; color: #003e92; margin-top: 0; margin-bottom: 10px; }
+        .meta-info { font-size: 0.95rem; color: #555; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 15px; }
+        .embed-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; margin-bottom: 25px; }
+        .embed-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .content-section { margin-top: 20px; line-height: 1.6; }
+        .content-section h2 { font-size: 1.3rem; color: #003e92; border-bottom: 2px solid #9cdbf0; padding-bottom: 5px; margin-top: 25px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; background: #f4f9fc; padding: 15px; border-radius: 6px; margin-bottom: 20px; }
+        .info-item { font-size: 0.95rem; }
+        .info-item strong { color: #003e92; }
+        .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #7bc6e6; font-size: 0.85rem; color: #333; }
+    </style>
+</head>
+<body>
+
+    <div class="top-banner-container">
+        <a href="https://giggle-factory.com/">
+            <img src="https://giggle-factory.com/images/giggle-factory-logo.png" alt="Giggle-Factory.com">
+        </a>
+    </div>
+
+    <div class="nav-bar">
+        <a href="https://giggle-factory.com/homevideos/index.html" class="btn-main-menu">← Back to Home Videos</a>
+    </div>
+
+    <div class="container">
+        <article class="video-container">
+            <h1 class="video-title">Video Title</h1>
+            
+            <div class="meta-info">
+                <span><strong>Duration:</strong> 0:00</span>
+                <span><strong>Creator:</strong> Source</span>
+                <span><strong>Category:</strong> Category Name</span>
+            </div>
+
+            <div class="embed-responsive">
+                <iframe src="https://www.youtube.com/embed/YOUTUBE_ID" title="Video Player" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="content-section">
+                <h2>Video Details & Metadata</h2>
+                <div class="info-grid">
+                    <div class="info-item"><strong>Original Title:</strong> Video Title</div>
+                    <div class="info-item"><strong>Category:</strong> Category Name</div>
+                </div>
+
+                <h2>Complete Video Description</h2>
+                <p>Description text goes here.</p>
+            </div>
+        </article>
+    </div>
+
+    <div class="footer">
+        <p>Last Updated: [Timestamp]</p>
+        <div id="footer-container"></div>
+    </div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => { document.getElementById('footer-container').innerHTML = data; })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>
+Template B: Hub Index Card (index.html entry format)
+HTML
+<div class="video-card">
+    <h3>Video Title</h3>
+    <div class="meta-info"><strong>Duration:</strong> 0:00 | <strong>Source:</strong> Source Name</div>
+    <div class="description">Short description of video content.</div>
+    <a href="https://giggle-factory.com/homevideos/YOUTUBE_ID.html" class="watch-btn">Watch Video</a>
+</div>
