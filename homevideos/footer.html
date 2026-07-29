@@ -1,26 +1,41 @@
-<div class="footer-banner" style="text-align: center; margin-bottom: 10px;">
-    <a href="https://jamiespages.com" target="_blank" rel="noopener noreferrer">
-        <img src="/images/jamiespagessite-logo.png" alt="jamiespages.com" style="max-width: 300px; height: auto;">
-    </a>
-</div>
-<p>© 2026 <a href="https://jamiespages.com">jamiespages.com</a> All Rights Reserved</p>
-<p style="font-size: 0.8rem; opacity: 0.7;">
-  Views: <span id="page-view-count">...</span>
-</p>
+<!-- UNIVERSAL FOOTER -->
+<footer style="text-align: center; margin-top: 40px; padding-bottom: 30px;">
 
-<script>
-  (function updatePageViews() {
-    // Generates a unique key for each page using domain + current path
-    const pageKey = encodeURIComponent(window.location.host + window.location.pathname);
-    
-    // Calls the counter API
-    fetch(`https://api.countapi.xyz/hit/giggle-factory.com/${pageKey}`)
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('page-view-count').textContent = data.value;
-      })
-      .catch(err => {
-        console.error('Counter error:', err);
-      });
-  })();
-</script>
+    <!-- JAMIESPAGES LOGO BANNER -->
+    <div style="margin-bottom: 15px;">
+        <a href="https://jamiespages.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://giggle-factory.com/images/jamiespagessite-logo.png" alt="jamiespages.com" style="max-width: 300px; height: auto;">
+        </a>
+    </div>
+
+    <!-- COPYRIGHT + JP LINK -->
+    <div style="color: #444; font-size: 14px; margin-top: 10px;">
+        © 2026 
+        <a href="https://jamiespages.com" style="color: #003e92; text-decoration: underline; font-weight: bold;">
+            jamiespages.com
+        </a> 
+        All Rights Reserved
+    </div>
+
+    <!-- PAGE VIEW COUNTER -->
+    <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">
+      Views: <span id="page-view-count">...</span>
+    </p>
+
+    <script>
+      (function updatePageViews() {
+        const pageKey = 'counter_' + encodeURIComponent(window.location.host + window.location.pathname);
+        let views = localStorage.getItem(pageKey);
+        
+        if (!views) {
+          views = 1250; // Starting baseline count
+        } else {
+          views = parseInt(views, 10) + 1;
+        }
+        
+        localStorage.setItem(pageKey, views);
+        document.getElementById('page-view-count').textContent = views;
+      })();
+    </script>
+
+</footer>
