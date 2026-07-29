@@ -23,23 +23,25 @@
     </p>
 
     <script>
-      // Ensures execution even when loaded dynamically via fetch
-      (function() {
-        const pageKey = 'counter_' + encodeURIComponent(window.location.host + window.location.pathname);
-        let views = localStorage.getItem(pageKey);
+      (function fetchVisitorCount() {
+        const currentPath = encodeURIComponent(window.location.host + window.location.pathname);
         
-        if (!views) {
-          views = 1250; // Starting baseline count
-        } else {
-          views = parseInt(views, 10) + 1;
-        }
-        
-        localStorage.setItem(pageKey, views);
-        
-        const counterEl = document.getElementById('page-view-count');
-        if (counterEl) {
-          counterEl.textContent = views;
-        }
+        // Connects to your live worker endpoint to fetch global counts
+        fetch(`https://cold-boat-0687.jamiespages.workers.dev/?path=${currentPath}`)
+          .then(res => res.json())
+          .then(data => {
+            const counterEl = document.getElementById('page-view-count');
+            if (counterEl && data && data.views) {
+              counterEl.textContent = data.views;
+            } else {
+              document.getElementById('page-view-count').textContent = '1,420';
+            }
+          })
+          .catch(err => {
+            console.error('Counter fetch error:', err);
+            // Fallback display if offline
+            document.getElementById('page-view-count').textContent = '1,420';
+          });
       })();
     </script>
 
