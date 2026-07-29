@@ -2,182 +2,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giggle Factory | G-F</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #9cdbf0;
-      color: #333;
-      margin: 0;
-      padding: 0 0 30px 0;
-    }
-    .top-banner-container {
-      background-color: #003e92;
-      text-align: center;
-      padding: 15px 0;
-      margin-bottom: 30px;
-    }
-    .top-banner-container img {
-      max-width: 450px;
-      width: 90%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-bottom: 40px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      text-decoration: none;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    }
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      color: #003e92;
-      font-size: 1.4rem;
-    }
-    .card p {
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.4;
-      margin: 0;
-    }
-    .badge-soon {
-      display: inline-block;
-      background-color: #e2801e;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: bold;
-      padding: 5px 12px;
-      border-radius: 4px;
-      margin-top: 15px;
-      align-self: center;
-    }
-    .footer-sponsor {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .footer-sponsor img {
-      max-width: 320px;
-      width: 80%;
-      height: auto;
-    }
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.85rem;
-      color: #333;
-    }
-    .footer a {
-      color: #003e92;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giggle Factory | G-F</title>
+    <style>
+        body {font-family: Arial, sans-serif; background-color: #9cdbf0; color: #333; margin: 0; padding: 0 0 30px 0; }
+        .top-banner-container {background-color: #003e92; text-align: center; padding: 15px 0; margin-bottom: 30px; }
+        .top-banner-container img {max-width: 450px; width: 90%; height: auto; display: block; margin: 0 auto; }
+        .container {max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .card {background: #ffffff; border-radius: 10px; padding: 30px 20px; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); text-decoration: none; color: #333; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; }
+        .card:hover {transform: translateY(-5px); box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12); }
+        .card h2 {margin-top: 0; margin-bottom: 12px; color: #003e92; font-size: 1.4rem; }
+        .card p {font-size: 0.95rem; color: #555; line-height: 1.4; margin: 0; }
+        .badge-soon {display: inline-block; background-color: #e2801e; color: #fff; font-size: 0.8rem; font-weight: bold; padding: 5px 12px; border-radius: 4px; margin-top: 15px; align-self: center; }
+        .footer {text-align: center; margin-top: 30px; font-size: 0.85rem; color: #333; }
+        .footer a {color: #003e92; text-decoration: none; font-weight: bold; }
+    </style>
 </head>
 <body>
-
-  <!-- Top Banner -->
-  <div class="top-banner-container">
-    <a href="https://giggle-factory.com/index.html">
-      <img src="https://giggle-factory.com/images/giggle-factory-logo.png" alt="Giggle Factory Banner">
-    </a>
-  </div>
-
-  <div class="container">
-    <div class="grid">
-
-      <!-- Standup Comedy -->
-      <a href="https://giggle-factory.com/standup/index.html" class="card">
-        <div>
-          <h2>Standup Comedy</h2>
-          <p>Watch live standup shows and comedy clips.</p>
-        </div>
-      </a>
-
-      <!-- Dad Jokes -->
-      <a href="https://giggle-factory.com/dadjokes/index.html" class="card">
-        <div>
-          <h2>Dad Jokes</h2>
-          <p>The ultimate collection of groan-worthy dad jokes.</p>
-        </div>
-      </a>
-
-      <!-- Home Videos (Active) -->
-      <a href="https://giggle-factory.com/homevideos/index.html" class="card">
-        <div>
-          <h2>Home Videos</h2>
-          <p>Funny home clips and caught-on-camera moments.</p>
-        </div>
-      </a>
-
-      <!-- Oops / Fails -->
-      <a href="https://giggle-factory.com/fails/index.html" class="card">
-        <div>
-          <h2>Oops / Fails</h2>
-          <p>Bloopers, fails, and hilarious mistakes.</p>
-        </div>
-        <span class="badge-soon">Coming Soon</span>
-      </a>
-
-      <!-- Sports Bloopers -->
-      <a href="https://giggle-factory.com/sports/index.html" class="card">
-        <div>
-          <h2>Sports Bloopers</h2>
-          <p>Funniest moments in sports history.</p>
-        </div>
-        <span class="badge-soon">Coming Soon</span>
-      </a>
-
-      <!-- More Categories -->
-      <a href="https://giggle-factory.com/more/index.html" class="card">
-        <div>
-          <h2>More Categories</h2>
-          <p>We are constantly adding new comedy sections.</p>
-        </div>
-        <span class="badge-soon">More Coming Soon</span>
-      </a>
-
+    <!-- Top Banner -->
+    <div class="top-banner-container">
+        <a href="https://giggle-factory.com/index.html">
+            <img src="https://giggle-factory.com/images/giggle-factory-logo.png" alt="Giggle Factory Banner">
+        </a>
     </div>
 
-    <!-- Sponsor Banner -->
-    <div class="footer-sponsor">
-      <a href="https://free-casino-chips.com" target="_blank" rel="noopener">
-        <img src="https://giggle-factory.com/images/free-casino-chips-banner.png" alt="Free Casino Chips">
-      </a>
+    <div class="container">
+        <div class="grid">
+            <!-- Standup Comedy -->
+            <a href="https://giggle-factory.com/standup/index.html" class="card">
+                <div>
+                    <h2>Standup Comedy</h2>
+                    <p>Watch live standup shows and comedy clips.</p>
+                </div>
+            </a>
+
+            <!-- Dad Jokes -->
+            <a href="https://giggle-factory.com/dadjokes/index.html" class="card">
+                <div>
+                    <h2>Dad Jokes</h2>
+                    <p>The ultimate collection of groan-worthy dad jokes.</p>
+                </div>
+            </a>
+
+            <!-- Home Videos (Active) -->
+            <a href="https://giggle-factory.com/homevideos/index.html" class="card">
+                <div>
+                    <h2>Home Videos</h2>
+                    <p>Funny home clips and caught-on-camera moments.</p>
+                </div>
+            </a>
+
+            <!-- Oops / Fails -->
+            <a href="https://giggle-factory.com/fails/index.html" class="card">
+                <div>
+                    <h2>Oops / Fails</h2>
+                    <p>Bloopers, fails, and hilarious mistakes.</p>
+                </div>
+                <span class="badge-soon">Coming Soon</span>
+            </a>
+
+            <!-- Sports Bloopers -->
+            <a href="https://giggle-factory.com/sports/index.html" class="card">
+                <div>
+                    <h2>Sports Bloopers</h2>
+                    <p>Funniest moments in sports history.</p>
+                </div>
+                <span class="badge-soon">Coming Soon</span>
+            </a>
+
+            <!-- More Categories -->
+            <a href="https://giggle-factory.com/more/index.html" class="card">
+                <div>
+                    <h2>More Categories</h2>
+                    <p>We are constantly adding new comedy sections.</p>
+                </div>
+                <span class="badge-soon">More Coming Soon</span>
+            </a>
+        </div>
+
+        <!-- Dynamic Footer Container -->
+        <div id="footer-container"></div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-      <p>Last Updated: July 28, 2026, 7:02 PM MDT</p>
-      <p>© 2026 <a href="https://jamiespages.com">jamiespages.com</a> All Rights Reserved</p>
-    </div>
-  </div>
-
+    <!-- Script to load footer.html dynamically -->
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 </html>
