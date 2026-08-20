@@ -241,27 +241,32 @@
     </div>
     </div>
 
-
-<!-- TIMESTAMP -->
-<div id="page-updated" style="text-align:center;color:#888;margin-top:20px;">
-    last updated: July 22, 2026 — 6:01 PM MDT
-</div>
-
-
-  
-    <!-- DYNAMIC FOOTER -->
-    <div id="footer-container" style="max-width:1500px; margin:0 auto;"></div>
-    <script>
-      fetch('/footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-container').innerHTML = data;
-        })
-        .catch(err => console.error('Error loading footer:', err));
-    </script>
-
   </div>
   
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+
+      // NOW the footer exists — safe to run the counter
+      const domain = window.location.hostname.replace(/\./g, "_");
+      const page = window.location.pathname.replace(/\//g, "_") || "home";
+      const counterKey = "pv_" + domain + "_" + page;
+
+      let views = localStorage.getItem(counterKey);
+      views = views ? parseInt(views) + 1 : 1;
+      localStorage.setItem(counterKey, views);
+
+      document.getElementById("viewCounter").innerText = "Views: " + views;
+    })
+    .catch(err => console.error("Footer failed to load:", err));
+</script>
+
+
 
 
   
