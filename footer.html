@@ -18,31 +18,7 @@
     </div>
 
     <!-- PAGE VIEW COUNTER -->
-    <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">
-      Views: <span id="page-view-count">...</span>
-    </p>
+<div id="viewCounter" style="font-size: 18px; color: gold; margin-top: 10px;"></div>
 
-    <script>
-      (function fetchVisitorCount() {
-        const currentPath = encodeURIComponent(window.location.host + window.location.pathname);
-        
-        // Connects to your live worker endpoint to fetch global counts
-        fetch(`https://cold-boat-0687.jamiespages.workers.dev/?path=${currentPath}`)
-          .then(res => res.json())
-          .then(data => {
-            const counterEl = document.getElementById('page-view-count');
-            if (counterEl && data && data.views) {
-              counterEl.textContent = data.views;
-            } else {
-              document.getElementById('page-view-count').textContent = '1,420';
-            }
-          })
-          .catch(err => {
-            console.error('Counter fetch error:', err);
-            // Fallback display if offline
-            document.getElementById('page-view-count').textContent = '1,420';
-          });
-      })();
-    </script>
 
 </footer>
