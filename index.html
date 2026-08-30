@@ -44,10 +44,11 @@
             transform: rotate(-1deg);
         }
 
-        .banner-container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        .banner-container h1 {
+            font-family: 'Bubblegum+Sans', cursive;
+            font-size: 2.5rem;
+            margin: 0;
+            color: #2980b9;
         }
 
         .container {
@@ -70,6 +71,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
         }
 
         .card:hover {
@@ -151,36 +154,34 @@
 
     <header>
         <div class="banner-container">
-            <!-- Replace with your actual banner asset URL if needed -->
-            <img src="banner.png" alt="Giggle Factory Banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <h1 style="font-family: 'Bubblegum+Sans', cursive; font-size: 2.5rem; margin: 0; color: #2980b9; display: none;">Giggle-Factory.com</h1>
+            <h1>Giggle-Factory.com</h1>
         </div>
     </header>
 
     <main class="container">
         <!-- Standup Comedy -->
-        <div class="card">
+        <a href="standup/" class="card">
             <div>
                 <h2>Standup Comedy</h2>
                 <p>Watch live standup shows and comedy clips.</p>
             </div>
-        </div>
+        </a>
 
         <!-- Dad Jokes -->
-        <div class="card">
+        <a href="dad-jokes/" class="card">
             <div>
                 <h2>Dad Jokes</h2>
                 <p>The ultimate collection of groan-worthy dad jokes.</p>
             </div>
-        </div>
+        </a>
 
         <!-- Home Videos -->
-        <div class="card">
+        <a href="home-videos/" class="card">
             <div>
                 <h2>Home Videos</h2>
                 <p>Funny home clips and caught-on-camera moments.</p>
             </div>
-        </div>
+        </a>
 
         <!-- Oops / Fails -->
         <div class="card">
@@ -212,7 +213,7 @@
 
     <footer>
         <div class="footer-brand">jamiespages.com</div>
-        <p>&copy; 2026 <a href="https://giggle-factory.com/">jamiespages.com</a> All Rights Reserved</p>
+        <p>&copy; 2026 <a href="https://jamiespages.com">jamiespages.com</a> All Rights Reserved</p>
         <p>Last update August 20, 2:35 pm</p>
         <p>Views: <span id="view-counter">34</span></p>
     </footer>
