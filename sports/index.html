@@ -119,7 +119,7 @@
         background-color: var(--card-bg);
         border: 4px solid var(--card-border);
         border-radius: 24px;
-        padding: 25px;
+        padding: 20px;
         box-shadow: 6px 6px 0px var(--comic-border);
         display: flex;
         flex-direction: column;
@@ -136,10 +136,10 @@
 
     .video-card h3 {
         font-family: 'Bubblegum+Sans', cursive;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         color: #27ae60;
         margin-top: 0;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
         letter-spacing: 1px;
     }
 
@@ -154,31 +154,32 @@
     }
 
     .description {
-        font-size: 1.05rem;
+        font-size: 0.95rem;
+        color: #555;
+        margin-top: 0;
+        margin-bottom: 15px;
         line-height: 1.4;
-        color: #333;
-        margin-bottom: 20px;
-        flex-grow: 1;
     }
 
-    .watch-btn {
-        display: inline-block;
-        text-align: center;
-        background-color: var(--accent-orange);
-        color: #ffffff;
-        padding: 10px 18px;
-        text-decoration: none;
-        font-weight: 600;
-        border-radius: 50px;
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        overflow: hidden;
         border: 3px solid var(--comic-border);
-        box-shadow: 4px 4px 0px var(--comic-border);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        background: #000;
     }
 
-    .watch-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 6px 6px 0px var(--comic-border);
-        background-color: #e67e22;
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
     }
 
     #footer-container {
@@ -213,9 +214,11 @@
         <div>
           <h3>Premature Celebration Disasters</h3>
           <div class="meta-info"><strong>Duration:</strong> 4:20 | <strong>Source:</strong> SportsCenter Fails</div>
-          <div class="description">Athletes celebrating crossing the finish line just a split second too early—with hilarious results.</div>
+          <p class="description">Athletes celebrating crossing the finish line just a split second too early—with hilarious results.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/n4p88AGr2fQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports1.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 2 -->
@@ -223,9 +226,11 @@
         <div>
           <h3>Epic Mascot Meltdowns</h3>
           <div class="meta-info"><strong>Duration:</strong> 5:45 | <strong>Source:</strong> Arena Antics</div>
-          <div class="description">Stadium mascots tumbling down stairs, missing dunks, and getting playfully outsmarted by fans.</div>
+          <p class="description">Stadium mascots tumbling down stairs, missing dunks, and getting playfully outsmarted by fans.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3m18GBTcuUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports2.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 3 -->
@@ -233,9 +238,11 @@
         <div>
           <h3>Referee Mishaps & Wrong-Way Runs</h3>
           <div class="meta-info"><strong>Duration:</strong> 6:10 | <strong>Source:</strong> Official Blunders</div>
-          <div class="description">Referees getting knocked over by stray balls, tackling players, and players scoring in their own goals.</div>
+          <p class="description">Referees getting knocked over by stray balls, tackling players, and players scoring in their own goals.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8s1r97W4Fbg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports3.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 4 -->
@@ -243,9 +250,11 @@
         <div>
           <h3>Hilarious Fan Catch Fails</h3>
           <div class="meta-info"><strong>Duration:</strong> 3:50 | <strong>Source:</strong> Bleacher Creatures</div>
-          <div class="description">Spectators spilling nachos, dropping pop flies, and trying to show off for the stadium camera.</div>
+          <p class="description">Spectators spilling nachos, dropping pop flies, and trying to show off for the stadium camera.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports4.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 5 -->
@@ -253,9 +262,11 @@
         <div>
           <h3>Golf Swing Catastrophes</h3>
           <div class="meta-info"><strong>Duration:</strong> 5:15 | <strong>Source:</strong> Fairway Fails</div>
-          <div class="description">Clubs flying out of hands, divots going further than the ball, and unexpected wildlife encounters on the green.</div>
+          <p class="description">Clubs flying out of hands, divots going further than the ball, and unexpected wildlife encounters on the green.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/L_LUpnjgPso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports5.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 6 -->
@@ -263,9 +274,11 @@
         <div>
           <h3>Soccer Dives & Dramatic Flops</h3>
           <div class="meta-info"><strong>Duration:</strong> 7:05 | <strong>Source:</strong> Pitch Comedy</div>
-          <div class="description">The most theatrical, exaggerated dives and over-the-acting reactions in professional soccer history.</div>
+          <p class="description">The most theatrical, exaggerated dives and over-the-acting reactions in professional soccer history.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kJQP7kiw5Fk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports6.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 7 -->
@@ -273,9 +286,11 @@
         <div>
           <h3>Basketball Airballs & Dunk Disasters</h3>
           <div class="meta-info"><strong>Duration:</strong> 4:55 | <strong>Source:</strong> Hardwood Humor</div>
-          <div class="description">Slam dunk attempts that ended in total embarrassment and shots missing the backboard entirely.</div>
+          <p class="description">Slam dunk attempts that ended in total embarrassment and shots missing the backboard entirely.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9bZkp7q19f0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports7.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 8 -->
@@ -283,9 +298,11 @@
         <div>
           <h3>Stray Animals Invading the Pitch</h3>
           <div class="meta-info"><strong>Duration:</strong> 6:30 | <strong>Source:</strong> Field Invaders</div>
-          <div class="description">Dogs, squirrels, and cats stealing the spotlight and outrunning security guards mid-game.</div>
+          <p class="description">Dogs, squirrels, and cats stealing the spotlight and outrunning security guards mid-game.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5NV6Rdv1a3I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports8.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 9 -->
@@ -293,9 +310,11 @@
         <div>
           <h3>Gymnastics & Balance Beam Blunders</h3>
           <div class="meta-info"><strong>Duration:</strong> 5:30 | <strong>Source:</strong> Flip Fails</div>
-          <div class="description">Unfortunate tumbles, tangled routines, and gravity winning every single round.</div>
+          <p class="description">Unfortunate tumbles, tangled routines, and gravity winning every single round.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3m18GBTcuUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports9.html" class="watch-btn">Watch Video</a>
       </div>
 
       <!-- VIDEO ENTRY 10 -->
@@ -303,9 +322,11 @@
         <div>
           <h3>The Ultimate Sports Blooper Finale</h3>
           <div class="meta-info"><strong>Duration:</strong> 9:15 | <strong>Source:</strong> Giggle Factory Vault</div>
-          <div class="description">A rapid-fire supercut of the wildest, funniest, and most unbelievable moments in sports blooper history.</div>
+          <p class="description">A rapid-fire supercut of the wildest, funniest, and most unbelievable moments in sports blooper history.</p>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8s1r97W4Fbg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <a href="https://giggle-factory.com/homevideos/sports10.html" class="watch-btn">Watch Video</a>
       </div>
     </div>
   </main>
