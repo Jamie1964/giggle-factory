@@ -1,0 +1,326 @@
+<!-- giggle-factory.com/homevideos/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funny Home Videos | Giggle Factory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+        --comic-yellow: #fff3cd;
+        --comic-border: #2c3e50;
+        --card-bg: #ffffff;
+        --card-border: #e74c3c;
+        --accent-orange: #f39c12;
+    }
+
+    body {
+        background-color: var(--comic-yellow);
+        background-image: radial-gradient(#e67e22 15%, transparent 16%), radial-gradient(#3498db 15%, transparent 16%);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
+        background-attachment: fixed;
+        font-family: 'Fredoka', sans-serif;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--comic-border);
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .banner-container {
+        background: #ffffff;
+        border: 4px solid var(--comic-border);
+        border-radius: 20px;
+        padding: 10px 15px;
+        box-shadow: 6px 6px 0px var(--comic-border);
+        display: inline-block;
+        transform: rotate(-1deg);
+        max-width: 100%;
+        text-decoration: none;
+    }
+
+    .banner-container img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+
+    .nav-container {
+        max-width: 1100px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .btn-back {
+        display: inline-block;
+        background-color: #ffffff;
+        color: var(--comic-border);
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 50px;
+        border: 3px solid var(--comic-border);
+        font-weight: 600;
+        box-shadow: 4px 4px 0px var(--comic-border);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-back:hover {
+        transform: translateY(-2px);
+        box-shadow: 6px 6px 0px var(--comic-border);
+    }
+
+    main {
+        max-width: 1100px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .page-title-box {
+        background-color: var(--card-bg);
+        border: 4px solid var(--card-border);
+        border-radius: 24px;
+        padding: 25px 30px;
+        box-shadow: 6px 6px 0px var(--comic-border);
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .page-title-box h1 {
+        font-family: 'Bubblegum+Sans', cursive;
+        font-size: 2.5rem;
+        color: #e74c3c;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+    }
+
+    .page-title-box p {
+        font-size: 1.15rem;
+        color: #333;
+        margin: 0;
+    }
+
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 25px;
+    }
+
+    .video-card {
+        background-color: var(--card-bg);
+        border: 4px solid var(--card-border);
+        border-radius: 24px;
+        padding: 20px;
+        box-shadow: 6px 6px 0px var(--comic-border);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .video-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 8px 10px 0px var(--comic-border);
+    }
+
+    .video-card h3 {
+        font-family: 'Bubblegum+Sans', cursive;
+        font-size: 1.5rem;
+        color: #e74c3c;
+        margin-top: 0;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 3px solid var(--comic-border);
+        background: #000;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    #footer-container {
+        margin-top: auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/index.html" class="banner-container">
+      <img src="/images/giggle-factory-logo.jpg" alt="Giggle Factory Banner" />
+    </a>
+  </header>
+
+  <div class="nav-container">
+    <a href="/index.html" class="btn-back">&larr; Back to Main Menu</a>
+  </div>
+
+  <main>
+    <div class="page-title-box">
+      <h1>Funny Home Videos</h1>
+      <p>Explore our curated collection of hilarious family bloopers, security camera chaos, and pet antics!</p>
+    </div>
+
+    <div class="video-grid">
+      <!-- 1 -->
+      <div class="video-card">
+        <div>
+          <h3>Fails You Can Feel – Classic Home Bloopers</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/g5U9rmGUF_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="video-card">
+        <div>
+          <h3>Best Security Camera Fails</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/t71GphcRrr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="video-card">
+        <div>
+          <h3>Caught in 4K – Funniest Home Security Moments</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uzcBj48wADc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="video-card">
+        <div>
+          <h3>TOTAL IDIOTS AT WORK</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/b6u4oR5yWMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="video-card">
+        <div>
+          <h3>😱 Instant Regret – Extreme Bike, Scooter & Skate Fails 💀</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2YQvn-VaXYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="video-card">
+        <div>
+          <h3>Best of GilstrapTV!! ALL-TIME GREATEST!</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/byOIMNSW2jU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="video-card">
+        <div>
+          <h3>Best Fails of September 2025 😂 Try Not to Laugh Challenge</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2RCoP_N3KQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="video-card">
+        <div>
+          <h3>Pranks Gone Wrong 😂 | Funny Scary Fails</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/K3REtTBRLX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="video-card">
+        <div>
+          <h3>Embarrassing Moments in Sports 😂 | Funny Fails Compilation</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iZFSLPkTJLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="video-card">
+        <div>
+          <h3>Funny Slippery Ice Fails Caught on Camera❄️🤣</h3>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NlW-dDKD4Ng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Dynamic Footer Anchor -->
+  <div id="footer-container">
+    <div id="footer"></div>
+  </div>
+
+  <script>
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+
+        // Run the local storage page counter
+        const domain = window.location.hostname.replace(/\./g, "_");
+        const page = window.location.pathname.replace(/\//g, "_") || "home";
+        const counterKey = "pv_" + domain + "_" + page;
+
+        let views = localStorage.getItem(counterKey);
+        views = views ? parseInt(views) + 1 : 1;
+        localStorage.setItem(counterKey, views);
+
+        const counterElement = document.getElementById("viewCounter");
+        if (counterElement) {
+            counterElement.innerText = "Views: " + views;
+        }
+      })
+      .catch(err => console.error("Footer failed to load:", err));
+  </script>
+
+</body>
+</html>
