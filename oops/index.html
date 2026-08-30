@@ -161,6 +161,24 @@
         flex-grow: 1;
     }
 
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        margin-top: 15px;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }
+
     .watch-btn {
         display: inline-block;
         text-align: center;
@@ -212,17 +230,24 @@
       <div class="video-card">
         <div>
           <h3>Worst Fails of the Year | Try Not to Laugh</h3>
-
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/g5U9rmGUF_U?si=rhtmmUK0ZJyVTpV-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="meta-info"><strong>Duration:</strong> 10:15 | <strong>Source:</strong> Viral Vault</div>
+          <div class="description">A hilarious compilation of the absolute clumsiest moments caught on camera this year.</div>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/g5U9rmGUF_U?si=rhtmmUK0ZJyVTpV-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
 
       <!-- VIDEO ENTRY 2 -->
       <div class="video-card">
         <div>
-          <h3>
-Funniest Summer Fails 😂</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/t71GphcRrr4?si=DRVgb_o1XnH04KBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
+          <h3>Funniest Summer Fails 😂</h3>
+          <div class="meta-info"><strong>Duration:</strong> 8:40 | <strong>Source:</strong> Summer Laughs</div>
+          <div class="description">Poolside slips, beach blunders, and backyard water balloon disasters at their finest.</div>
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/t71GphcRrr4?si=DRVgb_o1XnH04KBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
 
       <!-- VIDEO ENTRY 3 -->
