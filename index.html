@@ -121,11 +121,22 @@
             width: 100%;
         }
 
-        .footer-brand {
+        .footer-banner {
+            background: #ffffff;
+            border: 3px solid var(--comic-border);
+            border-radius: 14px;
+            padding: 8px 15px;
+            box-shadow: 3px 3px 0px var(--comic-border);
+            display: inline-block;
+            margin-bottom: 12px;
+            transform: rotate(1deg);
+        }
+
+        .footer-banner h2 {
             font-family: 'Bubblegum+Sans', cursive;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #8e44ad;
-            margin-bottom: 8px;
+            margin: 0;
         }
 
         footer p {
@@ -212,7 +223,9 @@
     </main>
 
     <footer>
-        <div class="footer-brand">jamiespages.com</div>
+        <div class="footer-banner">
+            <h2>jamiespages.com</h2>
+        </div>
         <p>&copy; 2026 <a href="https://jamiespages.com">jamiespages.com</a> All Rights Reserved</p>
         <p>Last update August 20, 2:35 pm</p>
         <p>Views: <span id="view-counter">34</span></p>
