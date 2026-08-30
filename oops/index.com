@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oops! Page Not Found | Giggle Factory</title>
+  <title>Oops! Epic Fails & Bloopers | Giggle Factory</title>
   <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -28,8 +28,6 @@
         flex-direction: column;
         align-items: center;
         color: var(--comic-border);
-        min-height: 100vh;
-        box-sizing: border-box;
     }
 
     header {
@@ -58,7 +56,7 @@
     }
 
     .nav-container {
-        max-width: 700px;
+        max-width: 1100px;
         width: 100%;
         margin-bottom: 20px;
     }
@@ -82,64 +80,102 @@
     }
 
     main {
-        max-width: 700px;
+        max-width: 1100px;
         width: 100%;
         margin-bottom: 40px;
-        display: flex;
-        justify-content: center;
     }
 
-    .error-card {
+    .page-title-box {
         background-color: var(--card-bg);
         border: 4px solid var(--card-border);
         border-radius: 24px;
-        padding: 40px 30px;
+        padding: 25px 30px;
         box-shadow: 6px 6px 0px var(--comic-border);
         text-align: center;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .error-code {
-        font-family: 'Bubblegum+Sans', cursive;
-        font-size: 5rem;
-        color: #e74c3c;
-        margin: 0;
-        letter-spacing: 2px;
-        text-shadow: 3px 3px 0px var(--comic-border);
-    }
-
-    .error-card h1 {
-        font-family: 'Bubblegum+Sans', cursive;
-        font-size: 2.2rem;
-        color: #2980b9;
-        margin: 10px 0 20px 0;
-        letter-spacing: 1px;
-    }
-
-    .error-card p {
-        font-size: 1.15rem;
-        line-height: 1.5;
-        color: #333;
         margin-bottom: 30px;
     }
 
-    .home-btn {
+    .page-title-box h1 {
+        font-family: 'Bubblegum+Sans', cursive;
+        font-size: 2.5rem;
+        color: #e74c3c;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+    }
+
+    .page-title-box p {
+        font-size: 1.15rem;
+        color: #333;
+        margin: 0;
+    }
+
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 25px;
+    }
+
+    .video-card {
+        background-color: var(--card-bg);
+        border: 4px solid var(--card-border);
+        border-radius: 24px;
+        padding: 25px;
+        box-shadow: 6px 6px 0px var(--comic-border);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .video-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 8px 10px 0px var(--comic-border);
+    }
+
+    .video-card h3 {
+        font-family: 'Bubblegum+Sans', cursive;
+        font-size: 1.6rem;
+        color: #e74c3c;
+        margin-top: 0;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+    }
+
+    .meta-info {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 12px;
+        background: #fdf2f2;
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 2px dashed #f5c6cb;
+    }
+
+    .description {
+        font-size: 1.05rem;
+        line-height: 1.4;
+        color: #333;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .watch-btn {
         display: inline-block;
         text-align: center;
         background-color: var(--accent-orange);
         color: #ffffff;
-        padding: 12px 28px;
+        padding: 10px 18px;
         text-decoration: none;
         font-weight: 600;
-        font-size: 1.1rem;
         border-radius: 50px;
         border: 3px solid var(--comic-border);
         box-shadow: 4px 4px 0px var(--comic-border);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .home-btn:hover {
+    .watch-btn:hover {
         transform: translateY(-2px);
         box-shadow: 6px 6px 0px var(--comic-border);
         background-color: #e67e22;
@@ -166,11 +202,111 @@
   </div>
 
   <main>
-    <div class="error-card">
-      <div class="error-code">404</div>
-      <h1>Oops! That Page Slipped Away</h1>
-      <p>Looks like this joke fell flat or the page took a detour into the comedy vault. Don't worry, there are plenty of laughs left back on the main stage!</p>
-      <a href="https://giggle-factory.com/index.html" class="home-btn">Return to Giggle Factory</a>
+    <div class="page-title-box">
+      <h1>Oops! Page Not Found – Enjoy Some Epic Fails!</h1>
+      <p>Since you took a wrong turn, console yourself with 10 of our absolute favorite internet "oops" moments and bloopers!</p>
+    </div>
+
+    <div class="video-grid">
+      <!-- VIDEO ENTRY 1 -->
+      <div class="video-card">
+        <div>
+          <h3>Ultimate Public Slip-Ups</h3>
+          <div class="meta-info"><strong>Duration:</strong> 4:45 | <strong>Source:</strong> FailArmy</div>
+          <div class="description">A hilarious compilation of unfortunate timing, red carpets gone wrong, and grocery store tumbles.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops1.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 2 -->
+      <div class="video-card">
+        <div>
+          <h3>DIY Projects Gone Horribly Wrong</h3>
+          <div class="meta-info"><strong>Duration:</strong> 8:12 | <strong>Source:</strong> Classic Bloopers</div>
+          <div class="description">Home improvement disasters featuring rogue paint cans, collapsed shelving, and unexpected indoor swimming pools.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops2.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 3 -->
+      <div class="video-card">
+        <div>
+          <h3>When Technology Betrays You</h3>
+          <div class="meta-info"><strong>Duration:</strong> 6:30 | <strong>Source:</strong> Tech Fails</div>
+          <div class="description">Smart home gadgets going rogue, automated vacuums declaring war on pets, and hilarious printer meltdowns.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops3.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 4 -->
+      <div class="video-card">
+        <div>
+          <h3>The Great Cake Baking Catastrophe</h3>
+          <div class="meta-info"><strong>Duration:</strong> 5:50 | <strong>Source:</strong> Kitchen Chaos</div>
+          <div class="description">Expectation versus reality hits hard as elaborate birthday cakes melt, burn, and collapse on camera.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops4.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 5 -->
+      <div class="video-card">
+        <div>
+          <h3>Epic Gym Fails & Treadmill Tumbles</h3>
+          <div class="meta-info"><strong>Duration:</strong> 7:15 | <strong>Source:</strong> Fitness Fails</div>
+          <div class="description">Overambitious fitness goals meeting gravity in the funniest ways possible at the local gym.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops5.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 6 -->
+      <div class="video-card">
+        <div>
+          <h3>Slippery When Wet: Ice & Water Blunders</h3>
+          <div class="meta-info"><strong>Duration:</strong> 3:55 | <strong>Source:</strong> Weather Watch</div>
+          <div class="description">Unforgiving driveways, rogue garden hoses, and surprise puddles catching unsuspecting pedestrians off guard.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops6.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 7 -->
+      <div class="video-card">
+        <div>
+          <h3>Caught Red-Handed: Naughty Pets</h3>
+          <div class="meta-info"><strong>Duration:</strong> 9:20 | <strong>Source:</strong> Pet Central</div>
+          <div class="description">Dogs trying to sneak past guilt-tripping owners after raiding the trash can and eating homework.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops7.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 8 -->
+      <div class="video-card">
+        <div>
+          <h3>Hoverboard & Skateboard Wipeouts</h3>
+          <div class="meta-info"><strong>Duration:</strong> 5:10 | <strong>Source:</strong> Action Sports</div>
+          <div class="description">High-speed momentum meeting sudden immovable objects in spectacular fashion.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops8.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 9 -->
+      <div class="video-card">
+        <div>
+          <h3>Wedding Photo Shoot Disasters</h3>
+          <div class="meta-info"><strong>Duration:</strong> 6:40 | <strong>Source:</strong> Special Moments</div>
+          <div class="description">Scenic beach portraits interrupted by rogue waves, photobombing animals, and broken heels.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops9.html" class="watch-btn">Watch Video</a>
+      </div>
+
+      <!-- VIDEO ENTRY 10 -->
+      <div class="video-card">
+        <div>
+          <h3>The Ultimate Montage of Random Oops</h3>
+          <div class="meta-info"><strong>Duration:</strong> 11:05 | <strong>Source:</strong> Giggle Factory Vault</div>
+          <div class="description">A rapid-fire grand finale of everyday stumbles, dropped ice creams, and unscripted comic relief.</div>
+        </div>
+        <a href="https://giggle-factory.com/homevideos/oops10.html" class="watch-btn">Watch Video</a>
+      </div>
     </div>
   </main>
 
