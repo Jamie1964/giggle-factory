@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- G-F.com/standup/standup.html -->
+<head>
+  <meta charset="UTF-8">
+  <title>Stand-Up Comedy Directory | Giggle Factory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stand-up comedy directory featuring comedians, videos, and profiles.">
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+        --comic-yellow: #fff3cd;
+        --comic-border: #2c3e50;
+        --card-bg: #ffffff;
+        --card-border: #4a90e2;
+        --accent-orange: #f39c12;
+    }
+
+    body {
+        background-color: var(--comic-yellow);
+        background-image: radial-gradient(#e67e22 15%, transparent 16%), radial-gradient(#3498db 15%, transparent 16%);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
+        background-attachment: fixed;
+        font-family: 'Fredoka', sans-serif;
+        margin: 0;
+        padding: 20px;
+        color: var(--comic-border);
+    }
+
+    /* Sidebar Styles */
+    #sidebar {
+      width: 260px;
+      background: #ffffff;
+      color: var(--comic-border);
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+      padding: 15px;
+      border-right: 4px solid var(--comic-border);
+      box-shadow: 4px 0px 0px rgba(0,0,0,0.1);
+      z-index: 9999;
+    }
+
+    .main-wrapper {
+      margin-left: 280px;
+      max-width: 1200px;
+    }
+
+    @media (max-width: 900px) {
+      .main-wrapper {
+        margin-left: 0;
+      }
+      #sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+      }
+    }
+
+    .btn-back {
+      display: inline-block;
+      background-color: #ffffff;
+      color: var(--comic-border);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 50px;
+      border: 3px solid var(--comic-border);
+      font-weight: 600;
+      box-shadow: 4px 4px 0px var(--comic-border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 20px;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 0px var(--comic-border);
+    }
+
+    /* Top Banner */
+    .banner-container {
+      background: #ffffff;
+      border: 4px solid var(--comic-border);
+      border-radius: 20px;
+      padding: 10px 15px;
+      box-shadow: 6px 6px 0px var(--comic-border);
+      display: inline-block;
+      transform: rotate(-1deg);
+      max-width: 100%;
+      text-decoration: none;
+      margin-bottom: 30px;
+    }
+
+    .banner-container img {
+      max-width: 100%;
+      height: 140px;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* Title Box */
+    .title-box {
+      max-width: 100%;
+      margin: 0 auto 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 24px;
+      border: 4px solid var(--card-border);
+      box-shadow: 6px 6px 0px var(--comic-border);
+      text-align: center;
+    }
+
+    .title-box h1 {
+      font-family: 'Bubblegum+Sans', cursive;
+      font-size: 3rem;
+      color: #2980b9;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    /* Content Layout */
+    .content-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .left-column {
+      flex: 1;
+      min-width: 300px;
+      background: var(--card-bg);
+      border: 4px solid var(--card-border);
+      border-radius: 24px;
+      padding: 25px;
+      box-shadow: 6px 6px 0px var(--comic-border);
+    }
+
+    .left-column h2 {
+      font-family: 'Bubblegum+Sans', cursive;
+      color: #2980b9;
+      font-size: 2rem;
+      margin-top: 0;
+      border-bottom: 3px solid var(--accent-orange);
+      padding-bottom: 8px;
+    }
+
+    .left-column ul {
+      margin-left: 20px;
+      padding-left: 0;
+      list-style-type: square;
+    }
+
+    .left-column li {
+      margin-bottom: 8px;
+    }
+
+    .left-column a {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .left-column a:hover {
+      text-decoration: underline;
+    }
+
+    .right-column {
+      flex: 1.2;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .card-box {
+      background: var(--card-bg);
+      border: 4px solid var(--card-border);
+      border-radius: 24px;
+      padding: 25px;
+      box-shadow: 6px 6px 0px var(--comic-border);
+    }
+
+    .card-box h2 {
+      font-family: 'Bubblegum+Sans', cursive;
+      color: #2980b9;
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 2px solid var(--comic-border);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fun-facts-box ul {
+      margin-left: 20px;
+      padding-left: 0;
+    }
+
+    .fun-facts-box li {
+      margin-bottom: 10px;
+      line-height: 1.4;
+      color: #333;
+    }
+
+    #footer-container {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div id="sidebar"></div>
+
+<script>
+  fetch("/laughs/sidebar.html")
+    .then(r => {
+      if (!r.ok) throw new Error("Sidebar file not found");
+      return r.text();
+    })
+    .then(html => document.getElementById("sidebar").innerHTML = html)
+    .catch(err => console.error("Error loading sidebar:", err));
+</script>
+
+<!-- PAGE CONTENT -->
+<div class="main-wrapper">
+
+  <!-- TOP BANNER -->
+  <div style="text-align:center;">
+    <a href="https://giggle-factory.com/" class="banner-container">
+      <img src="https://giggle-factory.com/images/giggle-factory-logo.jpg" alt="giggle-factory.com Logo">
+    </a>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <div>
+    <a href="https://giggle-factory.com/" class="btn-back">&larr; Back to Main Menu</a>
+  </div>
+
+  <!-- TITLE -->
+  <div class="title-box">
+    <h1>Stand-Up Comedians</h1>
+  </div>
+
+  <!-- MAIN CONTENT GRID -->
+  <div class="content-grid">
+    
+    <!-- LEFT COLUMN: COMEDIANS LIST -->
+    <div class="left-column">
+      <h2>Comedians Directory</h2>
+      <ul>
+        <li><a href="/standup/comedians/adam_sandler.html">Adam Sandler</a></li>
+        <li><a href="/standup/comedians/ali_siddiq.html">Ali Siddiq</a></li>
+        <li><a href="/standup/comedians/ali_wong.html">Ali Wong</a></li>
+        <li><a href="/standup/comedians/andrew_santino.html">Andrew Santino</a></li>
+        <li><a href="/standup/comedians/andrew_schulz.html">Andrew Schulz</a></li>
+        <li><a href="/standup/comedians/anjelah_johnson-reyes.html">Anjelah Johnson-Reyes</a></li>
+        <li><a href="/standup/comedians/anthony_jeselnik.html">Anthony Jeselnik</a></li>
+        <li><a href="/standup/comedians/bert_kreischer.html">Bert Kreischer</a></li>
+        <li><a href="/standup/comedians/bill_burr.html">Bill Burr</a></li>
+        <li><a href="/standup/comedians/bo_burnham.html">Bo Burnham</a></li>
+        <li><a href="/standup/comedians/brian_regan.html">Brian Regan</a></li>
+        <li><a href="/standup/comedians/brian_scolaro.html">Brian Scolaro</a></li>
+        <li><a href="/standup/comedians/carlos_mencia.html">Carlos Mencia</a></li>
+        <li><a href="/standup/comedians/carrot_top.html">Carrot Top</a></li>
+        <li><a href="/standup/comedians/cedric_the_entertainer.html">Cedric the Entertainer</a></li>
+        <li><a href="/standup/comedians/chris_d_elia.html">Chris D'Elia</a></li>
+        <li><a href="/standup/comedians/chris_rock.html">Chris Rock</a></li>
+        <li><a href="/standup/comedians/cory_michaelis.html">Cory Michaelis</a></li>
+        <li><a href="/standup/comedians/craig_robinson.html">Craig Robinson</a></li>
+        <li><a href="/standup/comedians/dane_cook.html">Dane Cook</a></li>
+        <li><a href="/standup/comedians/dave_attell.html">Dave Attell</a></li>
+        <li><a href="/standup/comedians/dave_chappelle.html">Dave Chappelle</a></li>
+        <li><a href="/standup/comedians/david_spade.html">David Spade</a></li>
+        <li><a href="/standup/comedians/demetri_martin.html">Demetri Martin</a></li>
+        <li><a href="/standup/comedians/donell_rawlings.html">Donell Rawlings</a></li>
+        <li><a href="/standup/comedians/drew_lynch.html">Drew Lynch</a></li>
+        <li><a href="/standup/comedians/eddie_griffin.html">Eddie Griffin</a></li>
+        <li><a href="/standup/comedians/eddie_murphy.html">Eddie Murphy</a></li>
+        <li><a href="/standup/comedians/eric_andre.html">Eric André</a></li>
+        <li><a href="/standup/comedians/fluffy_gabriel_iglesias.html">Fluffy (Gabriel Iglesias)</a></li>
+        <li><a href="/standup/comedians/frank_caliendo.html">Frank Caliendo</a></li>
+        <li><a href="/standup/comedians/gabriel_iglesias.html">Gabriel Iglesias</a></li>
+        <li><a href="/standup/comedians/george_carlin.html">George Carlin</a></li>
+        <li><a href="/standup/comedians/george_lopez.html">George Lopez</a></li>
+        <li><a href="/standup/comedians/gilbert_gottfried.html">Gilbert Gottfried</a></li>
+        <li><a href="/standup/comedians/hannah_gadsby.html">Hannah Gadsby</a></li>
+        <li><a href="/standup/comedians/hasan_minhaj.html">Hasan Minhaj</a></li>
+        <li><a href="/standup/comedians/howie_mandel.html">Howie Mandel</a></li>
+        <li><a href.html href="/standup/comedians/iliza_shlesinger.html">Iliza Shlesinger</a></li>
+        <li><a href="/standup/comedians/jason_banks.html">Jason Banks</a></li>
+        <li><a href="/standup/comedians/jeff_allen.html">Jeff Allen</a></li>
+        <li><a href="/standup/comedians/jerry_seinfeld.html">Jerry Seinfeld</a></li>
+        <li><a href="/standup/comedians/jim_breuer.html">Jim Breuer</a></li>
+        <li><a href="/standup/comedians/jim_gaffigan.html">Jim Gaffigan</a></li>
+        <li><a href="/standup/comedians/jim_jefferies.html">Jim Jefferies</a></li>
+        <li><a href="/standup/comedians/jo_koy.html">Jo Koy</a></li>
+        <li><a href="/standup/comedians/john_mulaney.html">John Mulaney</a></li>
+        <li><a href="/standup/comedians/john_oliver.html">John Oliver</a></li>
+        <li><a href="/standup/comedians/josh_blue.html">Josh Blue</a></li>
+        <li><a href="/standup/comedians/josh_wolf.html">Josh Wolf</a></li>
+        <li><a href="/standup/comedians/kevin_hart.html">Kevin Hart</a></li>
+        <li><a href="/standup/comedians/kevin_james.html">Kevin James</a></li>
+        <li><a href="/standup/comedians/kyle_dunnigan.html">Kyle Dunnigan</a></li>
+        <li><a href="/standup/comedians/kyle_kinane.html">Kyle Kinane</a></li>
+        <li><a href="/standup/comedians/lara_beitz.html">Lara Beitz</a></li>
+        <li><a href="/standup/comedians/lewis_black.html">Lewis Black</a></li>
+        <li><a href="/standup/comedians/maria_bamford.html">Maria Bamford</a></li>
+        <li><a href="/standup/comedians/mark_normand.html">Mark Normand</a></li>
+        <li><a href="/standup/comedians/matt_rife.html">Matt Rife</a></li>
+        <li><a href="/standup/comedians/mike_epps.html">Mike Epps</a></li>
+        <li><a href="/standup/comedians/mitch_hedberg.html">Mitch Hedberg</a></li>
+        <li><a href="/standup/comedians/mo_amer.html">Mo Amer</a></li>
+        <li><a href="/standup/comedians/nate_bargatze.html">Nate Bargatze</a></li>
+        <li><a href="/standup/comedians/nikki_glaser.html">Nikki Glaser</a></li>
+        <li><a href="/standup/comedians/patton_oswalt.html">Patton Oswalt</a></li>
+        <li><a href="/standup/comedians/pete_davidson.html">Pete Davidson</a></li>
+        <li><a href="/standup/comedians/phil_wang.html">Phil Wang</a></li>
+        <li><a href="/standup/comedians/preacher_lawson.html">Preacher Lawson</a></li>
+        <li><a href="/standup/comedians/ralphie_may.html">Ralphie May</a></li>
+        <li><a href="/standup/comedians/ray_romano.html">Ray Romano</a></li>
+        <li><a href="/standup/comedians/richard_pryor.html">Richard Pryor</a></li>
+        <li><a href="/standup/comedians/ricky_gervais.html">Ricky Gervais</a></li>
+        <li><a href="/standup/comedians/rob_schneider.html">Rob Schneider</a></li>
+        <li><a href="/standup/comedians/robin_williams.html">Robin Williams</a></li>
+        <li><a href="/standup/comedians/ron_white.html">Ron White</a></li>
+        <li><a href="/standup/comedians/russell_peters.html">Russell Peters</a></li>
+        <li><a href="/standup/comedians/ryan_hamilton.html">Ryan Hamilton</a></li>
+        <li><a href="/standup/comedians/ryan_long.html">Ryan Long</a></li>
+        <li><a href="/standup/comedians/saaniya_abbas.html">Saaniya Abbas</a></li>
+        <li><a href="/standup/comedians/sam_morril.html">Sam Morril</a></li>
+        <li><a href="/standup/comedians/sebastian_maniscalco.html">Sebastian Maniscalco</a></li>
+        <li><a href="/standup/comedians/shane_gillis.html">Shane Gillis</a></li>
+        <li><a href="/standup/comedians/shapel_lacey.html">Shapel Lacey</a></li>
+        <li><a href="/standup/comedians/steve_harvey.html">Steve Harvey</a></li>
+        <li><a href="/standup/comedians/steve_martin.html">Steve Martin</a></li>
+        <li><a href="/standup/comedians/taylor_tomlinson.html">Taylor Tomlinson</a></li>
+        <li><a href="/standup/comedians/theo_von.html">Theo Von</a></li>
+        <li><a href="/standup/comedians/tim_dillon.html">Tim Dillon</a></li>
+        <li><a href="/standup/comedians/tony_hinchcliffe.html">Tony Hinchcliffe</a></li>
+        <li><a href="/standup/comedians/trevor_noah.html">Trevor Noah</a></li>
+        <li><a href="/standup/comedians/wanda_sykes.html">Wanda Sykes</a></li>
+        <li><a href="/standup/comedians/whitney_cummings.html">Whitney Cummings</a></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT COLUMN: VIDEOS & FUN FACTS -->
+    <div class="right-column">
+      
+      <!-- VIDEO 1 -->
+      <div class="card-box">
+        <h2>Featured Stand-Up Clip</h2>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/FrzB7sow6vY?si=62JPzO6jOtdhPYrt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- VIDEO 2 -->
+      <div class="card-box">
+        <h2>Another Great Clip</h2>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/LBq0EDop148?si=Z1InyijO1BEYnnIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- VIDEO 3 -->
+      <div class="card-box">
+        <h2>Classic Stand-Up Moment</h2>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/LYfZ60ijd1Q?si=DRDaGOsoSH1c233w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- VIDEO 4 -->
+      <div class="card-box">
+        <h2>Crowd Favorite Clip</h2>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/JHbgA38R1OM?si=G8q2h6UTPBYNQPxU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- FUN FACTS -->
+      <div class="card-box fun-facts-box">
+        <h2>Comedy Fun Facts</h2>
+        <ul>
+          <li>George Carlin performed over <b>14 HBO specials</b>.</li>
+          <li>Gabriel Iglesias owns <b>800+ Volkswagen buses</b>.</li>
+          <li>Kevin Hart’s “Laugh at My Pain” sold out in <b>90 cities</b>.</li>
+          <li>Robin Williams improvised so much directors used <b>multiple cameras</b>.</li>
+          <li>Dave Chappelle walked away from <b>$50 million</b>.</li>
+          <li>Jo Koy started at a Las Vegas coffee shop open mic.</li>
+          <li>Jim Carrey performed his first stand‑up set at age 15 — and bombed so hard he didn’t return for two years.</li>
+          <li>Kevin Hart’s first comedy club paycheck was $45 — and he spent $40 of it on gas to get home.</li>
+          <li>Jo Koy once sold out an arena in Hawaii faster than Bruno Mars.</li>
+          <li>Bill Burr recorded his famous “Philadelphia Rant” after being booed for 10 minutes straight — and won the crowd back.</li>
+          <li>Robin Williams improvised so much during “Aladdin” that the script doubled in size.</li>
+          <li>Dave Chappelle once walked onstage in Ohio and performed for over 4 hours with no material prepared.</li>
+          <li>Ali Wong wrote most of “Baby Cobra” while actually pregnant — and filmed it at 7½ months.</li>
+          <li>George Lopez was the first Latino comedian to headline a sold‑out show at the Staples Center.</li>
+          <li>John Mulaney originally wanted to be a writer only — he didn’t plan to perform stand‑up at all.</li>
+          <li>Ralphie May lost a comedy competition to Sam Kinison — who then mentored him for years.</li>
+          <li>Hasan Minhaj’s “Homecoming King” was rejected by multiple networks before Netflix picked it up.</li>
+          <li>Fluffy (Gabriel Iglesias) owns so many Hawaiian shirts he has a warehouse section dedicated just to them.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER CONTAINER -->
+<div id="footer-container">
+  <div id="footer"></div>
+</div>
+
+<script>
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+
+      // Run the local storage page counter
+      const domain = window.location.hostname.replace(/\./g, "_");
+      const page = window.location.pathname.replace(/\//g, "_") || "home";
+      const counterKey = "pv_" + domain + "_" + page;
+
+      let views = localStorage.getItem(counterKey);
+      views = views ? parseInt(views) + 1 : 1;
+      localStorage.setItem(counterKey, views);
+
+      const counterElement = document.getElementById("viewCounter");
+      if (counterElement) {
+          counterElement.innerText = "Views: " + views;
+      }
+    })
+    .catch(err => console.error("Footer failed to load:", err));
+</script>
+
+</body>
+</html>
