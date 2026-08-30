@@ -1,127 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- G-F.com/dad/more/index.html -->
+<!-- giggle-factory.com/dad/more/index.html -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>More Dad Jokes | Giggle Factory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+        --comic-yellow: #fff3cd;
+        --comic-border: #2c3e50;
+        --card-bg: #ffffff;
+        --card-border: #4a90e2;
+        --accent-orange: #f39c12;
+    }
+
     body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: skyblue;
-      color: black;
+        background-color: var(--comic-yellow);
+        background-image: radial-gradient(#e67e22 15%, transparent 16%), radial-gradient(#3498db 15%, transparent 16%);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
+        background-attachment: fixed;
+        font-family: 'Fredoka', sans-serif;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--comic-border);
     }
+
     header {
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.25);
-      text-align: center;
-      padding-bottom: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
     }
+
     .banner-container {
-      width: 100%;
-      overflow: hidden;
-      display: block;
+        background: #ffffff;
+        border: 4px solid var(--comic-border);
+        border-radius: 20px;
+        padding: 10px 15px;
+        box-shadow: 6px 6px 0px var(--comic-border);
+        display: inline-block;
+        transform: rotate(-1deg);
+        max-width: 100%;
+        text-decoration: none;
     }
-    .banner-logo {
-      width: 100%;
-      max-height: 250px;
-      object-fit: cover;
-      display: block;
+
+    .banner-container img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
     }
+
     .nav-container {
-      max-width: 1100px;
-      margin: 1rem auto 0 auto;
-      padding: 0 1rem;
+        max-width: 1100px;
+        width: 100%;
+        margin-bottom: 20px;
     }
+
     .btn-back {
-      display: inline-block;
-      background-color: #ffffff;
-      color: #000000;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-weight: bold;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.2s ease, transform 0.2s ease;
+        display: inline-block;
+        background-color: #ffffff;
+        color: var(--comic-border);
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 50px;
+        border: 3px solid var(--comic-border);
+        font-weight: 600;
+        box-shadow: 4px 4px 0px var(--comic-border);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     .btn-back:hover {
-      background-color: #f0f0f0;
-      transform: translateY(-1px);
+        transform: translateY(-2px);
+        box-shadow: 6px 6px 0px var(--comic-border);
     }
+
     main {
-      max-width: 1100px;
-      margin: 1.5rem auto 2rem auto;
-      padding: 0 1rem;
+        max-width: 1100px;
+        width: 100%;
+        margin-bottom: 40px;
     }
+
+    .page-title-box {
+        background-color: var(--card-bg);
+        border: 4px solid var(--comic-border);
+        border-radius: 24px;
+        padding: 25px 30px;
+        box-shadow: 6px 6px 0px var(--comic-border);
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .page-title-box h1 {
+        font-family: 'Bubblegum+Sans', cursive;
+        font-size: 2.5rem;
+        color: #2980b9;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+    }
+
+    .page-title-box p {
+        font-size: 1.15rem;
+        color: #333;
+        margin: 0;
+    }
+
     .category-title {
-      color: #0b5cab;
-      border-bottom: 3px solid #fbc02d;
-      padding-bottom: 8px;
-      margin-top: 2.5rem;
-      margin-bottom: 1.5rem;
-      font-size: 1.6rem;
+        font-family: 'Bubblegum+Sans', cursive;
+        font-size: 2rem;
+        color: #2980b9;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 0px #fff;
     }
+
     .joke-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.25rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 25px;
     }
+
     .joke-card {
-      background-color: #ffffff;
-      border-radius: 10px;
-      padding: 1.25rem;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+        background-color: var(--card-bg);
+        border: 4px solid var(--card-border);
+        border-radius: 24px;
+        padding: 25px;
+        box-shadow: 6px 6px 0px var(--comic-border);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     .joke-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        transform: translateY(-4px);
+        box-shadow: 8px 10px 0px var(--comic-border);
     }
+
     .joke-number {
-      font-weight: bold;
-      color: #0b5cab;
-      font-size: 0.85rem;
-      margin-bottom: 8px;
+        font-family: 'Bubblegum+Sans', cursive;
+        color: #f39c12;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
     }
+
     .joke-setup {
-      font-weight: 600;
-      margin-bottom: 12px;
-      font-size: 1rem;
-      line-height: 1.4;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--comic-border);
+        margin-bottom: 15px;
+        line-height: 1.4;
     }
+
     .joke-punchline {
-      color: #444;
-      font-style: italic;
-      background-color: #f8f9fa;
-      padding: 8px 10px;
-      border-left: 3px solid #fbc02d;
-      border-radius: 4px;
-      font-size: 0.95rem;
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.4;
+        background: #f8f9fa;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 2px dashed #cbd5e1;
     }
+
     #footer-container {
-      margin-top: 3rem;
+        margin-top: auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <a href="https://giggle-factory.com/index.html" class="banner-container">
-      <img src="/images/giggle-factory-logo.png" alt="Giggle Factory Banner" class="banner-logo" />
+    <a href="/index.html" class="banner-container">
+      <img src="https://giggle-factory.com/images/giggle-factory-logo.jpg" alt="Giggle Factory Banner" />
     </a>
-    <h1>More Classic Dad Jokes</h1>
-    <p>40 extra groaners for any time, place, or occasion!</p>
   </header>
 
   <div class="nav-container">
-    <a href="https://giggle-factory.com/dad/index.html" class="btn-back">&larr; Back to Main Menu</a>
+    <a href="/dad/index.html" class="btn-back">&larr; Back to Dad Jokes Menu</a>
   </div>
 
   <main>
+    <div class="page-title-box">
+      <h1>More Classic Dad Jokes</h1>
+      <p>40 extra groaners for any time, place, or occasion!</p>
+    </div>
+
     <!-- Section 1 -->
     <h2 class="category-title">⭐ Ultimate Classics</h2>
     <div class="joke-grid">
@@ -423,36 +497,33 @@
     </div>
   </main>
 
-
-  
   <!-- Dynamic Footer Anchor -->
-<div id="/footer"></div>
+  <div id="footer-container">
+    <div id="footer"></div>
+  </div>
 
-<script>
-  fetch('/footer.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('/footer').innerHTML = html;
+  <script>
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
 
-      // NOW the footer exists — safe to run the counter
-      const domain = window.location.hostname.replace(/\./g, "_");
-      const page = window.location.pathname.replace(/\//g, "_") || "home";
-      const counterKey = "pv_" + domain + "_" + page;
+        // Run the local storage page counter
+        const domain = window.location.hostname.replace(/\./g, "_");
+        const page = window.location.pathname.replace(/\//g, "_") || "home";
+        const counterKey = "pv_" + domain + "_" + page;
 
-      let views = localStorage.getItem(counterKey);
-      views = views ? parseInt(views) + 1 : 1;
-      localStorage.setItem(counterKey, views);
+        let views = localStorage.getItem(counterKey);
+        views = views ? parseInt(views) + 1 : 1;
+        localStorage.setItem(counterKey, views);
 
-      document.getElementById("viewCounter").innerText = "Views: " + views;
-    })
-    .catch(err => console.error("Footer failed to load:", err));
-</script>
+        const counterElement = document.getElementById("viewCounter");
+        if (counterElement) {
+            counterElement.innerText = "Views: " + views;
+        }
+      })
+      .catch(err => console.error("Footer failed to load:", err));
+  </script>
 
-
-
-
-
-
-  
 </body>
 </html>
