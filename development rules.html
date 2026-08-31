@@ -1,0 +1,19 @@
+# giggle-factory.com Development Rules
+
+## 1. File Structure & Conventions
+* **Domain Name**: Strictly use `giggle-factory.com` (avoid abbreviations like "gigglefactory").
+* **Site Creator Reference**: [jamiespages.com](https://jamiespages.com) serves as the developer site, while domain-specific pages target their respective paths.
+* **Internal Linking**: Internal links must point directly to the active domain destination (`giggle-factory.com`).
+
+## 2. Technical Stack & Styling
+* **Markup**: Pure static HTML files with semantic structure.
+* **Styling**: Inline CSS styling without reliance on external CSS frameworks.
+* **Dynamic Components**: Vanilla JavaScript `fetch` requests for dynamic component loading (such as sidebars and footers).
+* **Hosting**: Cloudflare Pages / Cloudflare Workers with custom CNAME and DNS routing.
+
+## 3. Analytics & Features
+* **Page View Tracking**: Custom JavaScript page view counters stored within browser `localStorage`, bound with Cloudflare KV namespaces where applicable.
+* **Feedback Forms**: Strictly excluded across all pages and directories.
+
+## 4. Timestamps & Maintenance
+* **Last Update Label**: All footers must include an accurate timestamp format (e.g., `Last update August 31, 7:30 am`).
